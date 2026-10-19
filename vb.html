@@ -4608,7 +4608,7 @@ function printCurrentSection() {
         { title: "Escolta el nombre (21–100)", instr: "🔊 Escolta i tria el nombre.", type: "choice",
           items: () => sh([...Array(80).keys()].map(i => i + 21)).slice(0, 10).map(n => ({ q: "", say: NUMW(n), a: String(n), opts: numOpts100(n) })) },
         { title: "Escriu el nombre (21–100)", instr: "Escriu el nombre amb lletres (amb guionets: vint-i-dos, trenta-cinc…).", type: "gap",
-          items: () => sh([...Array(80).keys()].map(i => i + 21)).slice(0, 10).map(n => ({ t: n + " → ___", a: [NUMW(n), NUMW(n).replace(/-/g, " ")].concat(n % 10 === 1 && n > 20 ? [NUMW(n) + "n", NUMW(n).replace(/-/g, " ") + "n"] : []) })) },
+          items: () => sh([...Array(80).keys()].map(i => i + 21)).slice(0, 10).map(n => ({ t: n + " → ___", a: [...new Set([NUMW(n), NUMW(n).replace(/-/g, " ")].concat(n % 10 === 1 && n > 20 ? [NUMW(n) + "n", NUMW(n).replace(/-/g, " ") + "n"] : []))] })) },
         { title: "Masculí o femení? (nombres)", instr: "Tria la forma correcta del nombre.", type: "choice", shuffle: true,
           items: [
             { q: "21 dies → ___ dies", a: "vint-i-un", opts: ["vint-i-un","vint-i-una"] },
