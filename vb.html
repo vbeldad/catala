@@ -4509,6 +4509,8 @@ function printCurrentSection() {
         { title: 'Acomiadar-se', instr: 'Tria la forma d\'acomiadar-se.', type: 'choice', shuffle: true,
           opts: ['Bona nit', 'A reveure', 'Bon dia', 'Bona tarda'],
           items: pick([['Te\'n vas a dormir.','Bona nit'],['Surts d\'una botiga i no saps quan hi tornaràs.','A reveure'],['Deixes el teu veí a les deu del matí.','Bon dia'],['Acabes la classe a les sis de la tarda.','Bona tarda']]) },
+        { title: "Endevinalla (pàg. 13)", instr: "Llegeix l'endevinalla i tria la solució (solució del llibre, pàg. 191).", type: "choice",
+          items: [{ q: "El tens gran si ets molt bo. El tens fred si ets dolent. I el tens quiet si estàs mort.", a: "cor", opts: ["cor","cap","peu","nas"] }] },
     ]},
     { id: 'U2', ex: [
         { title: 'El verb estar', instr: 'Escriu la forma del verb estar.', type: 'gap', shuffle: true,
@@ -4564,6 +4566,8 @@ function printCurrentSection() {
           items: gaps([['barba → ___','barba'],['firma → ___','firma'],['caja → ___','capsa'],['gamba → ___','gamba'],['barca → ___','barca'],['perla → ___','perla'],['multa → ___','multa'],['cuerda → ___','corda'],['puerta → ___','porta'],['falda → ___','faldilla'],['cinta → ___','cinta'],['urna → ___','urna']]) },
         { title: 'Estats d\'ànim', instr: 'Escriu en català.', type: 'gap', shuffle: true,
           items: gaps([['Estoy entusiasmado. → ___','Estic entusiasmat'],['Estoy animado. → ___','Estic animat'],['Estoy triste. → ___','Estic trist'],['Estoy satisfecho. → ___','Estic satisfet'],['Estoy desanimado. → ___','Estic desanimat'],['Estoy preocupada. → ___','Estic preocupada']]) },
+        { title: "Endevinalla (pàg. 19)", instr: "Llegeix l'endevinalla i tria la solució (solució del llibre, pàg. 191).", type: "choice",
+          items: [{ q: "No tinc gens de gust ni gens d'olor, però cada estiu regalo frescor.", a: "aigua", opts: ["aigua","gel","vent","ombra"] }] },
     ]},
     { id: "U3", ex: [
         { title: "El verb conèixer", instr: "Escriu la forma del verb conèixer.", type: "gap", shuffle: true,
@@ -4592,6 +4596,8 @@ function printCurrentSection() {
           items: pick([["En Joan és alt ___ prim. (té totes dues coses)","i"],["En Joan és alt, ___ no és prim. (només una)","però"],["En Joan no és alt ___ prim. (cap de les dues)","ni"],["La Laia és simpàtica ___ generosa.","i"],["En Pere és parlador, ___ és poc amable.","però"],["La meva veïna no és alta ___ baixa.","ni"],["L'Antoni és seriós ___ poc amable.","i"],["És una persona callada, ___ molt treballadora.","però"]]) },
         { title: "Paraules (pàg. 24)", instr: "Escriu la paraula en català (llista de solucions del llibre).", type: "gap", shuffle: true,
           items: gaps([["blusa → ___","brusa"],["cable → ___","cable"],["fraile → ___","frare"],["gruta → ___","gruta"],["cabra → ___","cabra"],["ladrón → ___","lladre"],["libro → ___","llibre"],["cofre → ___","cofre"],["pluma → ___","ploma"],["sobre (carta) → ___","sobre"],["pueblo → ___","poble"],["trenza → ___","trena"]]) },
+        { title: "Endevinalla (pàg. 25)", instr: "Llegeix l'endevinalla i tria la solució (solució del llibre, pàg. 191).", type: "choice",
+          items: [{ q: "Soc al present o al passat, faig riure i faig plorar; espero que em critiquis per fer-ho millor demà.", a: "actor/actriu", opts: ["actor/actriu","pallasso","llibre","professor"] }] },
     ]},
     { id: "U4", ex: [
         { title: "Els espais de la casa", instr: "Escriu la paraula en català.", type: "gap", shuffle: true,
@@ -4649,6 +4655,10 @@ function printCurrentSection() {
           items: gaps([["Nosaltres tenim un cotxe. → És ___ cotxe.","el nostre"],["Nosaltres tenim una casa. → És ___ casa.","la nostra"],["Nosaltres tenim uns veïns. → Són ___ veïns.","els nostres"],["Nosaltres tenim unes bicicletes. → Són ___ bicicletes.","les nostres"],["Vosaltres teniu un jardí. → És ___ jardí.","el vostre"],["Vosaltres teniu una terrassa. → És ___ terrassa.","la vostra"],["Vosaltres teniu uns gats. → Són ___ gats.","els vostres"],["Vosaltres teniu unes cadires. → Són ___ cadires.","les vostres"],["Ells tenen un pis. → És ___ pis.","el seu"],["Elles tenen una moto. → És ___ moto.","la seva"],["Vostès tenen uns llibres. → Són ___ llibres.","els seus"],["Elles tenen unes plantes. → Són ___ plantes.","les seves"]]) },
         { title: "Ser + possessiu (plural)", instr: "Respon amb el verb ser i el possessiu.", type: "gap", shuffle: true,
           items: gaps([["Tu i jo tenim un gos. → ___ gos.","És el nostre"],["Vosaltres teniu una barca. → ___ barca.","És la vostra"],["Els meus avis tenen un hort. → ___ hort.","És el seu"],["Nosaltres tenim dues filles. → ___ filles.","Són les nostres"],["Vosaltres teniu uns amics a Reus. → ___ amics.","Són els vostres"],["Els veïns tenen tres cotxes. → ___ cotxes.","Són els seus"]]) },
+        { title: "Llista 2: possessius (pàg. 31)", instr: "Completa amb ser i el possessiu (solucions del llibre).", type: "gap",
+          items: gaps([["Els veïns tenen dues motos. → ___ motos.","Són les seves"],["Els meus cunyats es venen la caravana. → ___ caravana.","És la seva"],["Nosaltres som socis d'una discoteca. → ___ discoteca.","És la nostra"],["Les nostres ties són les mestresses del restaurant. → ___ restaurant.","És el seu"],["Vosaltres heu comprat dues bicicletes. → ___ bicicletes.","Són les vostres"]]) },
+        { title: "Endevinalla (pàg. 31)", instr: "Llegeix l'endevinalla i tria la solució (solució del llibre, pàg. 191).", type: "choice",
+          items: [{ q: "T'acompanyo si puges; i, si baixes, també. En tota ma vida, no faig pas res més.", a: "escala", opts: ["escala","ascensor","porta","ombra"] }] },
     ]},
     { id: "U5", ex: [
         { title: "Les parts del dia", instr: "Escriu en català.", type: "gap", shuffle: true,
@@ -4690,6 +4700,8 @@ function printCurrentSection() {
           items: gaps([["abrigo → ___","abric"],["trigo → ___","blat"],["libreta → ___","bloc"],["gato → ___","gat"],["dedo → ___","dit"],["dragón → ___","drac"],["plato → ___","plat"],["burro → ___","ruc"],["saco → ___","sac"],["vaso → ___","got"],["tapón → ___","tap"],["bote, tarro → ___","pot"]]) },
         { title: "Consonants finals p, t, c", instr: "🔊 Escolta i tria la paraula.", type: "choice",
           items: () => { const W = ["abric","clip","llac","ruc","avet","pic","set","bloc","drac","plat","cuc","llet","sac","blat","dit","tap","gat","got","pot","vuit"]; return sh(W).slice(0, 8).map(w => ({ q: "", say: w, a: w, opts: sh([w, ...sh(W.filter(x => x !== w)).slice(0, 3)]) })); } },
+        { title: "Endevinalla (pàg. 37)", instr: "Llegeix l'endevinalla i tria la solució (solució del llibre, pàg. 191).", type: "choice",
+          items: [{ q: "Quatre germans i germanes: la primera, alegre i viva; el segon, madur i fogós; la tercera, quieta i trista, i el quart, apagat del tot.", a: "estacions de l'any", opts: ["estacions de l'any","parts del dia","punts cardinals","elements"] }] },
     ]},
     { id: "U6", ex: [
         { title: "Verdura, peix i carn", instr: "Escriu l'aliment en català (pàg. 38).", type: "gap", shuffle: true,
