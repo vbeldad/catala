@@ -348,6 +348,68 @@
     nav button { font-size: 0.8rem; padding: 0.5rem 0.9rem; }
     .exercise-question { font-size: 1.2rem; }
   }
+
+  /* ===== LLIBRE (exercicis del llibre) ===== */
+  .lb-intro { font-size: 0.85rem; color: #a89060; margin-bottom: 1rem; line-height: 1.5; }
+  .lb-tools { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .lb-search { flex: 1 1 200px; min-width: 0; font-size: 15px; padding: 0.6rem 0.9rem; border-radius: 0.6rem; border: 1.5px solid #c9a84c40; background: var(--dark); color: var(--cream); font-family: inherit; outline: none; }
+  .lb-search:focus { border-color: var(--gold); }
+  .lb-filters, .lb-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .lb-filter, .lb-chip { font-size: 0.8rem; padding: 0.35rem 0.8rem; border-radius: 2rem; border: 1px solid #c9a84c40; background: var(--dark2); color: #a89060; cursor: pointer; font-family: inherit; }
+  .lb-filter.on, .lb-chip.on { background: var(--gold); border-color: var(--gold); color: var(--dark); font-weight: 500; }
+  .lb-chips { margin: 0.6rem 0 0.4rem; }
+  .lb-chip-n { opacity: .7; margin-left: 2px; }
+  .lb-index { margin-bottom: 1rem; }
+  .lb-idx-group { font-size: 0.75rem; letter-spacing: .12em; color: var(--gold); margin: 16px 0 6px; text-transform: uppercase; }
+  .lb-idx-lesson { background: var(--dark2); border: 1px solid #c9a84c25; border-radius: 0.8rem; margin-bottom: 6px; }
+  .lb-sum { list-style: none; cursor: pointer; padding: 10px 12px; display: flex; gap: 8px; align-items: baseline; }
+  .lb-sum::-webkit-details-marker { display: none; }
+  details.lb-idx-lesson > .lb-sum::before { content: '▸'; color: #a89060; }
+  details.lb-idx-lesson[open] > .lb-sum::before { content: '▾'; }
+  .lb-soon { opacity: .45; } .lb-soon .lb-sum { cursor: default; padding-left: 26px; }
+  .lb-idx-id { font-weight: 700; color: var(--gold); min-width: 1.4em; }
+  .lb-idx-name { flex: 1; font-size: 0.92rem; color: var(--cream); }
+  .lb-idx-theme { font-size: 0.75rem; color: #a89060; margin-left: 4px; }
+  .lb-idx-prog { font-size: 0.75rem; color: #a89060; white-space: nowrap; }
+  .lb-idx-desc { font-size: 0.82rem; color: #b8a478; padding: 0 12px 8px 30px; line-height: 1.45; }
+  .lb-idx-open { margin: 0 12px 8px 30px !important; }
+  .lb-idx-ex { display: block; width: 100%; text-align: left; background: none; border: none; border-top: 1px solid #c9a84c20; padding: 8px 12px 8px 30px; cursor: pointer; font-family: inherit; color: var(--cream); }
+  .lb-idx-ex:hover { background: #3d2e1060; }
+  .lb-idx-ex-t { font-size: 0.9rem; font-weight: 500; }
+  .lb-idx-ex-i { font-size: 0.75rem; color: #a89060; margin-top: 2px; }
+  .lb-tag { display: inline-block; font-size: 0.68rem; padding: 1px 7px; border-radius: 2rem; background: #c9a84c25; color: var(--gold-light); margin-left: 6px; vertical-align: 1px; }
+  .lb-res-head { font-size: 0.82rem; color: #a89060; margin: 4px 0 8px; }
+  .lb-lesson-head { margin: 1rem 0; }
+  .lb-lesson-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--cream); }
+  .lb-lesson-sub { font-size: 0.75rem; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
+  .lb-lesson-goal { font-size: 0.85rem; color: #b8a478; font-style: italic; margin-top: 4px; }
+  .lb-back { background: none; border: none; color: var(--gold); font-size: 0.82rem; cursor: pointer; padding: 0; margin-top: 6px; font-family: inherit; }
+  .lb-card { background: var(--dark2); border: 1px solid #c9a84c25; border-radius: 1rem; padding: 1rem 1.1rem; margin-bottom: 1rem; box-shadow: var(--shadow); }
+  .lb-card.lb-flash { outline: 2px solid var(--gold); }
+  .lb-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .lb-card-title { font-size: 0.95rem; font-weight: 500; color: var(--gold); }
+  .lb-score { font-size: 0.75rem; color: #a89060; white-space: nowrap; }
+  .lb-score.done { color: #4ade80; }
+  .lb-instr { font-size: 0.8rem; color: #a89060; margin: 4px 0 8px; font-style: italic; }
+  .lb-item { padding: 8px 0; border-top: 1px solid #c9a84c18; font-size: 0.98rem; color: var(--cream); line-height: 1.9; }
+  .lb-item:first-of-type { border-top: none; }
+  .lb-q { margin-right: 6px; }
+  .lb-opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .lb-opt { background: var(--dark); color: var(--cream); border: 1px solid #c9a84c40; border-radius: 0.5rem; font-size: 0.9rem; padding: 0.4rem 0.7rem; cursor: pointer; font-family: inherit; }
+  .lb-opt:hover:not(:disabled) { border-color: var(--gold); }
+  .lb-opt:disabled { cursor: default; }
+  .lb-opt:disabled:not(.ok):not(.bad) { opacity: .45; }
+  .lb-opt.ok, .lb-gap.ok { background: #1a3320; border-color: var(--green); color: #c8f7d4; }
+  .lb-opt.bad, .lb-gap.bad { background: #2e1010; border-color: var(--red); color: #f5c4c0; }
+  .lb-opt.bad { text-decoration: line-through; }
+  .lb-gap { font-size: 0.95rem; padding: 2px 6px; border: 1.5px solid #c9a84c40; border-radius: 0.4rem; background: var(--dark); color: var(--cream); font-family: inherit; max-width: 100%; outline: none; }
+  .lb-gap:focus { border-color: var(--gold); }
+  .lb-fix { color: #4ade80; font-size: 0.82rem; margin-left: 6px; }
+  .lb-say { background: #c9a84c25; color: var(--gold-light); border: none; border-radius: 0.4rem; padding: 2px 8px; font-size: 0.9rem; margin-right: 6px; cursor: pointer; }
+  .lb-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .lb-btn { padding: 0.45rem 1rem; border-radius: 2rem; border: 1px solid var(--gold); background: transparent; color: var(--gold); font-size: 0.82rem; font-weight: 500; cursor: pointer; font-family: inherit; }
+  .lb-btn.lb-primary { background: var(--gold); color: var(--dark); }
+  @media (max-width: 500px) { .lb-card { padding: 0.9rem; } .lb-idx-desc, .lb-idx-ex { padding-left: 14px; } .lb-idx-open { margin-left: 14px !important; } }
 </style>
 </head>
 <body>
@@ -375,6 +437,7 @@
   <button onclick="showTab('tab-hores')">🕐 Les Hores</button>
   <button onclick="showTab('tab-calendari')">📅 Calendari</button>
   <button onclick="showTab('tab-presentacio')">🎤 Presentació</button>
+  <button onclick="showTab('tab-llibre')">📗 Llibre</button>
 </nav>
 
 <main>
@@ -1091,8 +1154,8 @@
 
 </div>
 
-  <!-- TAULA MODE -->
-  <div id="mercat-taula">
+  <!-- TAULA MODE (còpia sobrant, amagada) -->
+  <div id="mercat-taula" style="display:none">
     <div class="card" style="padding:1.2rem">
       <div class="exercise-label" id="mercat-taula-label">Vocabulari</div>
       <div id="mercat-taula-body" style="margin-top:0.8rem;display:grid;grid-template-columns:1fr 1fr;gap:0;"></div>
@@ -1256,6 +1319,21 @@
     <button class="btn" onclick="presRestart()" style="width:100%;margin-top:0;">🔄 Tornar a practicar</button>
   </div>
 
+</div>
+
+
+<!-- ========== LLIBRE ========== -->
+<div id="tab-llibre" class="section">
+  <div class="exercise-label">El llibre de català</div>
+  <p class="lb-intro">Exercicis de les unitats del llibre (Bàsic 1, 2 i 3). Busca el que vols practicar, obre l'índex o tria una unitat. 🔊 llegeix en veu alta.</p>
+  <div class="lb-tools">
+    <input id="lbSearch" class="lb-search" type="search" placeholder="🔍 Cerca: ser, alfabet, nombres, agradar, dies…" autocomplete="off">
+    <button id="lbIndexBtn" class="lb-btn lb-primary" type="button">📑 Índex</button>
+  </div>
+  <div class="lb-filters" id="lbFilters"></div>
+  <div id="lbIndex" class="lb-index" style="display:none"></div>
+  <div class="lb-chips" id="lbLessonChips"></div>
+  <div id="lbLessonBody"></div>
 </div>
 
 </main>
@@ -1913,6 +1991,7 @@ function showTab(id) {
   document.getElementById(id).classList.add('active');
   event.target.classList.add('active');
   if(id === 'tab-presentacio') initPresentacio();
+  if(id === 'tab-llibre') renderLlibre();
 }
 
 // ======================================
@@ -4301,5 +4380,368 @@ function printCurrentSection() {
   });
 }
 </script>
+<script>
+/* ===== LLIBRE: exercicis del llibre de català ===== */
+(function () {
+    const sh = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
+    const gaps = list => list.map(([t, a, say]) => ({ t, a: [].concat(a), say }));
+    const pick = (list, opts) => list.map(([q, a, say]) => ({ q, a, say, opts }));
+
+    // ----- Índex del llibre (30 unitats) -----
+    const THEMES = ['Trobar-se', 'Sentir-se bé', 'Conèixer gent', 'Descriure espais', 'Narrar fets', 'Comprar', 'Demanar serveis', 'Explicar procediments', 'Aconsellar', 'Valorar'];
+    const UNITS = [
+        [1, 'Bon dia!', "Conèixer-nos com a companys de curs i recollir dades d'uns i altres.", 8],
+        [2, 'Estic animat!', 'Dir què ens agrada fer, quan ho fem i com ens sentim fent-ho.', 14],
+        [3, 'És bona gent!', 'Explicar als companys i companyes com és una persona coneguda.', 20],
+        [4, 'Casa meva o casa teva', 'Oferir el pis a algú perquè convisqui uns dies amb nosaltres.', 26],
+        [5, 'Què fem?', 'Organitzar un cap de setmana de visita a una ciutat.', 32],
+        [6, 'Un quilo de musclos!', 'Comprar aliments en una botiga de proximitat.', 38],
+        [7, 'Pots tancar la porta?', 'Demanar favors a veïns, companys i amics.', 44],
+        [8, 'Què cal fer?', 'Donar instruccions breus a una persona.', 50],
+        [9, 'Saps què va bé?', 'Demanar i donar consells domèstics i de salut.', 56],
+        [10, "D'acord!", "Fer una enquesta sobre aliments i valorar el que s'ha après.", 62],
+        [11, 'Què? Com va?', 'Trobar-nos amb persones que fa temps que no veiem.', 68],
+        [12, "Me'n recordo tant!", 'Recordar històries o anècdotes emocionants.', 74],
+        [13, 'Quins personatges!', "Descriure amb detall personatges que han d'aparèixer en una pel·lícula.", 80],
+        [14, 'On anirem?', 'Decidir-se entre diverses ofertes de vacances familiars.', 86],
+        [15, 'Què us va passar?', 'Explicar què ens va passar quan anàvem a peu o amb cotxe.', 92],
+        [16, "Emprova-t'ho!", 'Comprar i canviar peces de roba.', 98],
+        [17, "Qui m'ajuda?", 'Sol·licitar i oferir serveis en un banc de temps.', 104],
+        [18, 'Com es fa això?', 'Explicar receptes de plats fàcils de preparar.', 110],
+        [19, 'I si ho proves?', 'Suggerir activitats de lleure i cultura.', 116],
+        [20, 'Decideix-te!', "Comentar aptituds professionals i avaluar l'aprenentatge.", 122],
+        [21, 'Ens veiem?', 'Trobar-nos amb persones amb qui coincidim per una afició comuna.', 128],
+        [22, "S'hi està bé!", 'Comentar per ràdio com fer feliç la gent a casa, a la feina i amb els amics.', 134],
+        [23, 'Qui és? Què fa?', 'Exposar com ha de ser la gent que treballa al servei del públic.', 140],
+        [24, "L'espai ideal", "Explicar com volem que siguin alguns espais comuns d'ús freqüent.", 146],
+        [25, 'Diu que va dir...', "Explicar qui va participar en una conversa i què s'hi va dir.", 152],
+        [26, 'Què li compro?', 'Fer un regal a algú que celebra un esdeveniment personal.', 158],
+        [27, 'Amb molt de gust', 'Reservar serveis per fer una visita cultural col·lectiva.', 166],
+        [28, 'Fem-ho com dius!', 'Elaborar llistes de normes per complir en situacions diverses.', 172],
+        [29, 'Què ens recomanes?', 'Donar consells sobre activitats i dedicacions interessants.', 178],
+        [30, 'Posa nota al curs!', 'Redactar bons consells per a nous aprenents de català.', 184],
+    ].map(([n, title, goal, page]) => ({ n, id: 'U' + n, title, goal, page, theme: THEMES[(n - 1) % 10], level: 'Bàsic ' + Math.ceil(n / 10) }));
+
+    // Resum en castellà del que es practica (ajuda a la cerca)
+    const TOPICS = {
+        U1: 'Saludar y presentarse, verbo ser, cerca/lejos, verbo viure, el alfabeto y deletrear, números 0–20, datos personales, verbo parlar y despedirse.',
+        U2: 'Verbo estar, content/trist, gustos con agradar, actividades de ocio, frecuencia, molt/bastant/poc/gens, també/tampoc, días de la semana, trobar-se, Quina sort / Quina llàstima, verbos regulares en -ar, tenir y estados de ánimo.',
+    };
+
+    // ----- Dades per als exercicis -----
+    const ALFABET = [['A','a'],['B','be'],['C','ce'],['Ç','ce trencada'],['D','de'],['E','e'],['F','efa'],['G','ge'],['H','hac'],['I','i'],['J','jota'],['K','ca'],['L','ela'],['M','ema'],['N','ena'],['O','o'],['P','pe'],['Q','cu'],['R','erra'],['S','essa'],['T','te'],['U','u'],['V','ve baixa'],['W','ve doble'],['X','xeix'],['Y','i grega'],['Z','zeta']];
+    const NUMS = ['zero','u','dos','tres','quatre','cinc','sis','set','vuit','nou','deu','onze','dotze','tretze','catorze','quinze','setze','disset','divuit','dinou','vint'];
+    const numOpts = n => { const s = new Set([n]); while (s.size < 4) { const d = n + [-10, -3, -2, -1, 1, 2, 3, 10][Math.floor(Math.random() * 8)]; if (d >= 0 && d <= 20) s.add(d); } return sh([...s]).map(String); };
+    const spell = w => [...w.toUpperCase()].map(c => (ALFABET.find(x => x[0] === c) || [c, c])[1]).join(', ');
+
+    const LESSONS = [
+    { id: 'U1', ex: [
+        { title: 'Saludar', instr: 'Quina salutació fas servir? Tria.', type: 'choice', shuffle: true,
+          opts: ['Bon dia', 'Bona tarda', 'Bona nit'],
+          items: pick([['Són les nou del matí i entres a la classe.','Bon dia'],['Són les cinc de la tarda i arribes a la feina.','Bona tarda'],['Són les onze de la nit i te\'n vas a dormir.','Bona nit'],['Esmorzes amb la família a les vuit.','Bon dia'],['Truques a un amic a les sis de la tarda.','Bona tarda'],['Surts del restaurant a mitjanit.','Bona nit']]) },
+        { title: 'Presentar-se', instr: 'Completa la presentació (Em dic… / Soc… / Visc a…).', type: 'gap',
+          items: gaps([['Hola, bona tarda. Em ___ Marta.','dic'],['___ italiana, de Torí.','Soc'],['___ a Girona, a prop de Figueres.','Visc'],['Hola! Jo ___ dic Pau i soc de Lleida.','em'],['Soc ___ Tolosa, a França.','de'],['Visc ___ Tortosa.','a']]) },
+        { title: 'El verb ser', instr: 'Escriu la forma del verb ser.', type: 'gap', shuffle: true,
+          items: gaps([['Jo ___ la Raquel.','soc'],['Tu ___ en Joel.','ets'],['Ella ___ la Marina.','és'],['Nosaltres ___ de Portugal.','som'],['Vosaltres ___ del Camerun.','sou'],['Ells ___ de Guatemala.','són'],['Vostè ___ de Xile?','és'],['Elles ___ germanes.','són']]) },
+        { title: 'Persona + país', instr: 'Fes la frase com a l\'exemple: Ell + Corea → Ell és de Corea.', type: 'gap', shuffle: true,
+          items: gaps([['Jo + Colòmbia → Jo ___ de Colòmbia.','soc'],['Tu + Sudan → Tu ___ del Sudan.','ets'],['Ella + Portugal → Ella ___ de Portugal.','és'],['Nosaltres + Itàlia → Nosaltres ___ d\'Itàlia.','som'],['Vosaltres + el Japó → Vosaltres ___ del Japó.','sou'],['Ells + Marroc → Ells ___ del Marroc.','són']]) },
+        { title: 'A prop o lluny?', instr: 'Mira el mapa del llibre (pàg. 10). Tria a prop o lluny.', type: 'choice', shuffle: true,
+          opts: ['és a prop de', 'és lluny de'],
+          items: pick([['Castelló … Tortosa','és a prop de'],['Lleida … l\'Alguer','és lluny de'],['Figueres … Girona','és a prop de'],['Alacant … Perpinyà','és lluny de'],['Reus … Tarragona','és a prop de'],['Vielha … València','és lluny de'],['Alcoi … Alacant','és a prop de'],['Palma … Fraga','és lluny de']]) },
+        { title: 'El verb viure', instr: 'Escriu la forma del verb viure.', type: 'gap', shuffle: true,
+          items: gaps([['Jo ___ lluny de l\'escola.','visc'],['Tu ___ a prop del banc.','vius'],['Ell ___ a Vic.','viu'],['Nosaltres ___ a prop de la farmàcia.','vivim'],['Vosaltres ___ lluny del cinema.','viviu'],['Elles ___ a Palma.','viuen'],['On ___ vostè?','viu']]) },
+        { title: 'Equipaments de la ciutat', instr: 'Escriu la paraula en català.', type: 'gap', shuffle: true,
+          items: gaps([['ayuntamiento → l\'___','ajuntament'],['escuela → l\'___','escola'],['cine → el ___','cinema'],['estación de autobuses → l\'___','estació d\'autobusos'],['banco → el ___','banc'],['farmacia → la ___','farmàcia']]) },
+        { title: 'El nom de les lletres', instr: 'Com es diu aquesta lletra en català?', type: 'choice', shuffle: true,
+          items: () => sh(ALFABET.filter(([l]) => 'ÇGHJKLQRSVWXYZ'.includes(l))).slice(0, 10).map(([l, n]) => ({ q: l, a: n, say: n, opts: sh([n, ...sh(ALFABET.filter(x => x[1] !== n)).slice(0, 3).map(x => x[1])]) })) },
+        { title: 'Escolta la lletra', instr: '🔊 Escolta i tria la lletra.', type: 'choice',
+          items: () => sh(ALFABET).slice(0, 10).map(([l, n]) => ({ q: '', say: n, a: l, opts: sh([l, ...sh(ALFABET.filter(x => x[0] !== l)).slice(0, 3).map(x => x[0])]) })) },
+        { title: 'Lletrejar poblacions', instr: '🔊 Escolta com la lletregen i tria la població.', type: 'choice',
+          items: () => { const P = ['Sevilla','Girona','Reus','Vic','Lleida','Palma','Alcoi','Fraga','Tortosa','Vielha']; return sh(P).slice(0, 6).map(p => ({ q: '', say: spell(p), a: p, opts: sh([p, ...sh(P.filter(x => x !== p)).slice(0, 3)]) })); } },
+        { title: 'Paraules de l\'alfabet', instr: 'Escriu la paraula que fa servir el llibre per a cada lletra.', type: 'gap', shuffle: true,
+          items: gaps([['A d\'___ (ajo)','all'],['C de ___ (corazón)','cor'],['F de ___ (fuego)','foc'],['G de ___ (gato)','gat'],['H d\'___ (hombre)','home'],['I d\'___ (isla)','illa'],['J de ___ (juego)','joc'],['M de ___ (mano)','mà'],['N de ___ (nido)','niu'],['O d\'___ (huevo)','ou'],['R de ___ (río)','riu'],['U d\'___ (ojo)','ull'],['V de ___ (vino)','vi'],['Y d\'___ (año)','any']]) },
+        { title: 'Escolta el nombre', instr: '🔊 Escolta i tria el nombre.', type: 'choice',
+          items: () => sh([...Array(21).keys()]).slice(0, 10).map(n => ({ q: '', say: NUMS[n], a: String(n), opts: numOpts(n) })) },
+        { title: 'Escriu el nombre', instr: 'Escriu el nombre amb lletres.', type: 'gap',
+          items: () => sh([...Array(21).keys()]).slice(0, 10).map(n => ({ t: n + ' → ___', a: [NUMS[n]] })) },
+        { title: 'Comprendre i escriure paraules', instr: 'Escriu la paraula en català (pàg. 12).', type: 'gap', shuffle: true,
+          items: gaps([['ala → ___','ala'],['hoja (de árbol) → ___','fulla'],['gorra → ___','gorra'],['casa → ___','casa'],['olla → ___','olla'],['rosa → ___','rosa'],['manzana → ___','poma'],['rueda → ___','roda'],['piña → ___','pinya'],['rata → ___','rata'],['luna → ___','lluna'],['vaca → ___','vaca']]) },
+        { title: 'El nombre i la paraula', instr: 'Com a l\'exemple de la pàg. 12: el nombre u és una ala. Completa.', type: 'gap', shuffle: true,
+          items: gaps([['El nombre set és una ___. Comença amb P (de pa).','poma'],['El nombre ___ és una casa. Comença amb C (de cor).','quatre'],['El nombre dotze és una ___. Comença amb V (de vi).','vaca'],['El nombre ___ és una rata. Comença amb R (de riu).','deu'],['El nombre onze és la ___. Comença amb L (de lupa).','lluna'],['El nombre ___ és una gorra. Comença amb G (de gat).','tres']]) },
+        { title: 'Preguntes i respostes', instr: 'Tria la resposta adequada.', type: 'choice', shuffle: true,
+          opts: ['Em dic Màlika.', 'Soc de Burkina Faso.', 'Visc a Santa Bàrbara.', 'Sí, és el 977 31 50 48.', 'Parlo francès i castellà.'],
+          items: pick([['Hola. Com et dius?','Em dic Màlika.'],['D\'on ets?','Soc de Burkina Faso.'],['On vius?','Visc a Santa Bàrbara.'],['Tens telèfon?','Sí, és el 977 31 50 48.'],['Quines llengües parles?','Parlo francès i castellà.']]) },
+        { title: 'El verb parlar', instr: 'Escriu la forma del verb parlar.', type: 'gap', shuffle: true,
+          items: gaps([['Jo ___ català i castellà.','parlo'],['Tu ___ anglès?','parles'],['Ella ___ àrab.','parla'],['Nosaltres ___ francès.','parlem'],['Vosaltres ___ italià?','parleu'],['Ells ___ bissa.','parlen']]) },
+        { title: 'Fer preguntes', instr: 'Completa la pregunta.', type: 'gap', shuffle: true,
+          items: gaps([['Com et ___? — Em dic Pau.','dius'],['D\'___ ets? — Soc de Reus.','on'],['On ___? — Visc a Vic.','vius'],['___ telèfon? — Sí, és el 600 12 34 56.','Tens'],['Quines llengües ___? — Parlo romanès i català.','parles']]) },
+        { title: 'Acomiadar-se', instr: 'Tria la forma d\'acomiadar-se.', type: 'choice', shuffle: true,
+          opts: ['Bona nit', 'A reveure', 'Bon dia', 'Bona tarda'],
+          items: pick([['Te\'n vas a dormir.','Bona nit'],['Surts d\'una botiga i no saps quan hi tornaràs.','A reveure'],['Deixes el teu veí a les deu del matí.','Bon dia'],['Acabes la classe a les sis de la tarda.','Bona tarda']]) },
+    ]},
+    { id: 'U2', ex: [
+        { title: 'El verb estar', instr: 'Escriu la forma del verb estar.', type: 'gap', shuffle: true,
+          items: gaps([['Jo ___ content.','estic'],['Tu ___ trista?','estàs'],['Ell ___ animat.','està'],['Nosaltres ___ preocupats.','estem'],['Vosaltres ___ contents?','esteu'],['Elles ___ tristes.','estan'],['Vostè ___ bé?','està']]) },
+        { title: 'Content o contenta? Trist o trista?', instr: 'Tria la paraula correcta.', type: 'choice', shuffle: true,
+          items: [
+            { q: 'La Marga està ___. (triste)', a: 'trista', opts: ['trista', 'triste', 'trist'] },
+            { q: 'En Joan està ___. (contento)', a: 'content', opts: ['content', 'contento', 'contenta'] },
+            { q: 'La Laia està ___. (contenta)', a: 'contenta', opts: ['contenta', 'content', 'contente'] },
+            { q: 'En Pere està ___. (triste)', a: 'trist', opts: ['trist', 'triste', 'trista'] },
+            { q: 'Les nenes estan ___. (contentas)', a: 'contentes', opts: ['contentes', 'contentas', 'contents'] },
+            { q: 'Els avis estan ___. (tristes)', a: 'tristos', opts: ['tristos', 'tristes', 'trists'] },
+          ] },
+        { title: 'Alegre o trist?', instr: 'Com et sents en aquesta situació?', type: 'choice', shuffle: true,
+          opts: ['😀 Estic content', '😟 Estic trist'],
+          items: pick([['Tinc cotxe nou.','😀 Estic content'],['Em posen una multa.','😟 Estic trist'],['Ajudo els amics.','😀 Estic content'],['És el meu aniversari.','😀 Estic content'],['Arribo tard.','😟 Estic trist'],['El meu equip guanya.','😀 Estic content'],['Fa mal temps per esquiar.','😟 Estic trist'],['Trobo un vell amic.','😀 Estic content'],['Perdo les claus de casa.','😟 Estic trist'],['M\'ha tocat la loteria.','😀 Estic content']]) },
+        { title: 'M\'agrada / t\'agrada / li agrada', instr: 'Completa amb el verb agradar.', type: 'gap', shuffle: true,
+          items: gaps([['A mi ___ anar al cinema.',['m\'agrada']],['A tu ___ cuinar?',['t\'agrada']],['A ella ___ llegir llibres.',['li agrada']],['A vostè ___ el teatre?',['li agrada']],['No ___ pintar. (a mi)',['m\'agrada']],['A ell no ___ córrer.',['li agrada']]]) },
+        { title: 'Activitats de lleure', instr: 'Escriu l\'activitat en català (pàg. 15).', type: 'gap', shuffle: true,
+          items: gaps([['hacer excursiones → ___','fer excursions'],['escuchar música → ___','escoltar música'],['viajar en barco → ___','viatjar en vaixell'],['hacer los deberes → ___','fer els deures'],['escribir novelas → ___','escriure novel·les'],['ir al cine → ___','anar al cinema'],['ir al teatro → ___','anar al teatre'],['leer libros → ___','llegir llibres'],['pintar → ___','pintar'],['correr → ___','córrer'],['ver exposiciones → ___','veure exposicions'],['cocinar → ___','cuinar']]) },
+        { title: 'Amb quina freqüència?', instr: 'Tria la traducció correcta.', type: 'choice', shuffle: true,
+          opts: ['sempre', 'sovint', 'moltes vegades', 'de tant en tant', 'alguna vegada', 'mai'],
+          items: pick([['siempre','sempre'],['a menudo','sovint'],['muchas veces','moltes vegades'],['de vez en cuando','de tant en tant'],['alguna vez','alguna vegada'],['nunca','mai']]) },
+        { title: 'Molt, bastant, poc, gens', instr: 'Tria la frase en català.', type: 'choice', shuffle: true,
+          opts: ['M\'agrada molt.', 'M\'agrada bastant.', 'M\'agrada poc.', 'No m\'agrada gaire.', 'No m\'agrada gens.'],
+          items: pick([['Me gusta mucho.','M\'agrada molt.'],['Me gusta bastante.','M\'agrada bastant.'],['Me gusta poco.','M\'agrada poc.'],['No me gusta mucho.','No m\'agrada gaire.'],['No me gusta nada.','No m\'agrada gens.']]) },
+        { title: 'Diàlegs', instr: 'Completa el diàleg.', type: 'gap', shuffle: true,
+          items: gaps([['—T\'agrada fer excursions? —Molt. M\'agrada ___.','molt'],['—T\'agrada pintar? —No ___. (no mucho)','gaire'],['—Ho fas sovint? —No, ___. (nunca)','mai'],['—Enric, t\'agrada cuinar? —No. No m\'agrada ___.','gens'],['—Fina, t\'agrada escoltar música? —Sí, m\'agrada ___. (bastante)','bastant'],['—Vas al teatre? —Sí, ___. (a menudo)','sovint']]) },
+        { title: 'També o tampoc?', instr: 'Tria també o tampoc.', type: 'choice', shuffle: true,
+          opts: ['també', 'tampoc'],
+          items: pick([['M\'agrada escriure. A la Berta ___ li agrada escriure.','també'],['No m\'agrada visitar museus. Al Damià ___ li agrada.','tampoc'],['M\'agrada córrer. A en Pau ___ li agrada.','també'],['No m\'agrada cuinar. A la Laia ___ li agrada.','tampoc'],['No m\'agrada el futbol. Al meu germà ___.','tampoc'],['M\'agrada viatjar. A la meva mare ___.','també']]) },
+        { title: 'Els dies de la setmana', instr: 'Escriu el dia en català.', type: 'gap', shuffle: true,
+          items: gaps([['lunes → ___','dilluns'],['martes → ___','dimarts'],['miércoles → ___','dimecres'],['jueves → ___','dijous'],['viernes → ___','divendres'],['sábado → ___','dissabte'],['domingo → ___','diumenge']]) },
+        { title: 'Quin dia és?', instr: 'Tria el dia que va després.', type: 'choice', shuffle: true,
+          opts: ['dilluns', 'dimarts', 'dimecres', 'dijous', 'divendres', 'dissabte', 'diumenge'],
+          items: pick([['Després de dilluns ve…','dimarts'],['Després de dimecres ve…','dijous'],['Després de divendres ve…','dissabte'],['Després de diumenge ve…','dilluns'],['Després de dimarts ve…','dimecres'],['Després de dissabte ve…','diumenge']]) },
+        { title: 'Cada quan es fa una cosa', instr: 'Escriu en català.', type: 'gap', shuffle: true,
+          items: gaps([['cada lunes → ___','cada dilluns'],['cada día → ___','cada dia'],['cada semana → ___','cada setmana'],['cada mes → ___','cada mes'],['cada año → ___','cada any'],['Yo, cada martes, estudio inglés. → Jo, ___, estudio anglès.','cada dimarts']]) },
+        { title: 'Com et trobes?', instr: 'Completa amb em / et / es / ens / us.', type: 'gap', shuffle: true,
+          items: gaps([['Jo no ___ trobo gens bé.','em'],['Tu ___ trobes bé?','et'],['Ella ___ troba molt bé.','es'],['Nosaltres ___ trobem bé.','ens'],['Vosaltres no ___ trobeu gaire bé.','us'],['Ells ___ troben bastant bé.','es']]) },
+        { title: 'Quina sort! o Quina llàstima!', instr: 'Què exclames?', type: 'choice', shuffle: true,
+          opts: ['Quina sort!', 'Quina llàstima!'],
+          items: pick([['Tinc el cotxe espatllat.','Quina llàstima!'],['M\'enfado amb un amic.','Quina llàstima!'],['Et convido al teatre.','Quina sort!'],['Tinc un familiar malalt.','Quina llàstima!'],['Soc al parc d\'atraccions.','Quina sort!'],['Guanyo un premi.','Quina sort!'],['Em giro un peu.','Quina llàstima!'],['Dino amb un bon amic.','Quina sort!'],['Arribo tard a l\'examen.','Quina llàstima!'],['Navego pel Jònic.','Quina sort!']]) },
+        { title: 'Enfadar-se i quedar-se', instr: 'Escriu la forma del verb.', type: 'gap', shuffle: true,
+          items: gaps([['Jo ___ amb el meu germà. (enfadar-se)','m\'enfado'],['Tu ___ a casa. (quedar-se)','et quedes'],['Ella ___ amb tothom. (enfadar-se)','s\'enfada'],['Nosaltres ___ a dinar. (quedar-se)','ens quedem'],['Vosaltres ___ sovint. (enfadar-se)','us enfadeu'],['Ells ___ a l\'hotel. (quedar-se)','es queden']]) },
+        { title: 'Present dels verbs en -ar', instr: 'Escriu el verb en present.', type: 'gap', shuffle: true,
+          items: gaps([['Nosaltres (cuinar) ___ cada diumenge.','cuinem'],['Tu (estudiar) ___ català.','estudies'],['Ells (ballar) ___ salsa.','ballen'],['Jo (guanyar) ___ la cursa.','guanyo'],['Vosaltres (celebrar) ___ l\'aniversari.','celebreu'],['Ella (preguntar) ___ el camí.','pregunta'],['Jo (pensar) ___ en tu.','penso'],['Tu (observar) ___ els ocells.','observes'],['Elles (donar) ___ un regal.','donen'],['Vosaltres (comprovar) ___ les respostes.','comproveu'],['Jo (explicar) ___ la lliçó.','explico'],['Nosaltres (explicar) ___ un conte.','expliquem']]) },
+        { title: 'El verb tenir', instr: 'Escriu la forma del verb tenir.', type: 'gap', shuffle: true,
+          items: gaps([['Jo ___ el cotxe espatllat.','tinc'],['Tu ___ el cotxe espatllat.','tens'],['Ell ___ el cotxe espatllat.','té'],['Nosaltres ___ el cotxe espatllat.','tenim'],['Vosaltres ___ el cotxe espatllat.','teniu'],['Vostès ___ el cotxe espatllat.','tenen']]) },
+        { title: 'Alegria o tristesa', instr: 'Completa la frase.', type: 'gap', shuffle: true,
+          items: gaps([['Estic molt satisfeta ___ celebro una festa familiar. (cuando)','quan'],['La Gemma no es troba ___ bé quan està sola. (nada)','gens'],['Em trobo ___ bé. (bastante)',['força','bastant']],['Estic molt ___ (contento) quan trobo els amics.','content'],['No estic gens ___ (satisfecha).','satisfeta'],['En Martí està molt ___ (triste).','trist']]) },
+        { title: 'Paraules (pàg. 19)', instr: 'Escriu la paraula en català.', type: 'gap', shuffle: true,
+          items: gaps([['bigote → ___','bigoti'],['firma → ___',['signatura','firma']],['caja → ___','caixa'],['gamba → ___','gamba'],['barca → ___','barca'],['perla → ___','perla'],['multa → ___','multa'],['cuerda → ___','corda'],['puerta → ___','porta'],['falda → ___','faldilla'],['cinta → ___','cinta'],['urna → ___','urna']]) },
+        { title: 'Estats d\'ànim', instr: 'Escriu en català.', type: 'gap', shuffle: true,
+          items: gaps([['Estoy entusiasmado. → ___','Estic entusiasmat'],['Estoy animado. → ___','Estic animat'],['Estoy triste. → ___','Estic trist'],['Estoy satisfecho. → ___','Estic satisfet'],['Estoy desanimado. → ___','Estic desanimat'],['Estoy preocupada. → ___','Estic preocupada']]) },
+    ]},
+    ];
+    LESSONS.forEach(l => Object.assign(l, UNITS.find(u => u.id === l.id)));
+
+    // ===== ÍNDEX =====
+    const TYPES = { listen: '🔊 Escoltar', choice: '☑️ Triar', gap: '✍️ Escriure' };
+    const exType = ex => /🔊/.test(ex.instr) ? 'listen' : ex.type === 'gap' ? 'gap' : 'choice';
+    const fold = t => String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’‘´`]/g, "'");
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const ENTRIES = [];
+    function buildEntries() {
+        LESSONS.forEach(l => l.ex.forEach((ex, i) => {
+            let words = '';
+            if (Array.isArray(ex.items)) words = ex.items.map(it => [it.q, it.t, it.a, it.say].flat().filter(Boolean).join(' ')).join(' ');
+            ENTRIES.push({ l, i, ex, type: exType(ex),
+                hayEx: fold([ex.title, ex.instr, TYPES[exType(ex)], words].join(' ')),
+                hayL: fold([l.id, 'unitat ' + l.n, l.title, l.theme, l.goal, TOPICS[l.id] || ''].join(' ')) });
+        }));
+    }
+    let typeFilter = 'all';
+    const exKey = (l, i) => l.id + '-' + i;
+    function exRow(e) {
+        const done = BEST[exKey(e.l, e.i)] === 'full' ? ' ✅' : '';
+        return `<button class="lb-idx-ex" data-go="${e.l.id}" data-i="${e.i}"><div class="lb-idx-ex-t">${esc(e.ex.title)}${done}<span class="lb-tag">${TYPES[e.type]}</span></div><div class="lb-idx-ex-i">Unitat ${e.l.n} · ${esc(e.ex.instr)}</div></button>`;
+    }
+    function renderIndex() {
+        const box = document.getElementById('lbIndex');
+        const q = fold(document.getElementById('lbSearch').value.trim());
+        const pass = e => typeFilter === 'all' || e.type === typeFilter;
+        if (q) {
+            const terms = q.split(/\s+/);
+            let hits = ENTRIES.filter(e => pass(e) && terms.every(t => e.hayEx.includes(t)));
+            if (!hits.length) hits = ENTRIES.filter(e => pass(e) && terms.every(t => (e.hayEx + ' ' + e.hayL).includes(t)));
+            box.innerHTML = `<div class="lb-res-head">${hits.length} exercici${hits.length === 1 ? '' : 's'} trobat${hits.length === 1 ? '' : 's'}</div>` +
+                (hits.length ? `<div class="lb-idx-lesson">${hits.map(exRow).join('')}</div>` : '<div class="lb-idx-desc" style="padding-left:0">Prova amb una altra paraula (en català o en castellà).</div>');
+        } else {
+            box.innerHTML = ['Bàsic 1', 'Bàsic 2', 'Bàsic 3'].map(lv => `<div class="lb-idx-group">${lv}</div>` + UNITS.filter(u => u.level === lv).map(u => {
+                const l = LESSONS.find(x => x.id === u.id);
+                const head = `<span class="lb-idx-id">${u.n}</span><span class="lb-idx-name">${esc(u.title)} <span class="lb-idx-theme">${esc(u.theme)}</span></span>`;
+                if (!l) return `<div class="lb-idx-lesson lb-soon"><div class="lb-sum">${head}<span class="lb-idx-prog">pàg. ${u.page} · aviat</span></div></div>`;
+                const es = ENTRIES.filter(e => e.l === l && pass(e));
+                const done = l.ex.filter((x, i) => BEST[exKey(l, i)] === 'full').length;
+                return `<details class="lb-idx-lesson"><summary class="lb-sum">${head}<span class="lb-idx-prog">${done}/${l.ex.length}</span></summary>` +
+                    `<div class="lb-idx-desc">${esc(u.goal)}<br><span style="opacity:.75">${esc(TOPICS[u.id] || '')} (pàg. ${u.page}–${u.page + 5})</span></div>` +
+                    `<button class="lb-btn lb-idx-open" data-go="${l.id}">Obrir la unitat sencera →</button>` + es.map(exRow).join('') + '</details>';
+            }).join('')).join('');
+        }
+        box.querySelectorAll('[data-go]').forEach(b => b.onclick = () => goTo(b.dataset.go, b.dataset.i));
+    }
+    function showIndex(on) {
+        document.getElementById('lbIndex').style.display = on ? '' : 'none';
+        document.getElementById('lbIndexBtn').textContent = on ? '✕ Tancar índex' : '📑 Índex';
+        if (on) renderIndex();
+    }
+    function goTo(id, i) {
+        showIndex(false);
+        document.getElementById('lbSearch').value = '';
+        openLesson(id, i === undefined);
+        if (i !== undefined) {
+            const card = document.querySelector(`#lbLessonBody .lb-card[data-i="${i}"]`);
+            if (card) {
+                window.scrollTo({ top: card.getBoundingClientRect().top + window.pageYOffset - 16, behavior: 'smooth' });
+                card.classList.add('lb-flash'); setTimeout(() => card.classList.remove('lb-flash'), 1800);
+            }
+        }
+    }
+    function initIndex() {
+        buildEntries();
+        const f = document.getElementById('lbFilters');
+        f.innerHTML = [['all', 'Tots'], ...Object.entries(TYPES)].map(([k, v]) => `<button class="lb-filter ${k === typeFilter ? 'on' : ''}" data-f="${k}">${v}</button>`).join('');
+        f.querySelectorAll('[data-f]').forEach(b => b.onclick = () => {
+            typeFilter = b.dataset.f;
+            f.querySelectorAll('[data-f]').forEach(x => x.classList.toggle('on', x === b));
+            showIndex(true);
+        });
+        document.getElementById('lbIndexBtn').onclick = () => showIndex(document.getElementById('lbIndex').style.display === 'none');
+        document.getElementById('lbSearch').addEventListener('input', () => showIndex(true));
+    }
+
+    // ===== MOTOR =====
+    let BEST = {};
+    try { BEST = JSON.parse(localStorage.getItem('llibre-best') || '{}'); } catch (e) {}
+    const saveBest = () => { try { localStorage.setItem('llibre-best', JSON.stringify(BEST)); } catch (e) {} };
+    let curLesson = 'U1';
+    try { curLesson = localStorage.getItem('llibre-lesson') || 'U1'; } catch (e) {}
+    if (!LESSONS.find(l => l.id === curLesson)) curLesson = 'U1';
+
+    let voice = null;
+    function pickVoice() {
+        try { const v = speechSynthesis.getVoices(); voice = v.find(x => /^ca/i.test(x.lang)) || null; } catch (e) {}
+    }
+    try { pickVoice(); speechSynthesis.addEventListener('voiceschanged', pickVoice); } catch (e) {}
+    function speak(t) {
+        try {
+            speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(t);
+            u.lang = 'ca-ES'; u.rate = 0.85; if (voice) u.voice = voice;
+            speechSynthesis.speak(u);
+        } catch (e) { alert('El teu navegador no pot llegir en veu alta.'); }
+    }
+
+    const norm = s => String(s).toLowerCase().replace(/[’‘`´]/g, "'").replace(/l\.l/g, 'l·l').replace(/\s*'\s*/g, "'")
+        .replace(/[.!?,;:—–-]+$/, '').replace(/^[—–-]+/, '').replace(/\s+/g, ' ').trim();
+    const sayBtn = t => `<button class="lb-say" data-say="${esc(t)}" title="Escoltar">🔊</button>`;
+
+    function renderChips() {
+        document.getElementById('lbLessonChips').innerHTML = LESSONS.map(l => {
+            const done = l.ex.filter((e, i) => BEST[exKey(l, i)] === 'full').length;
+            return `<button class="lb-chip ${l.id === curLesson ? 'on' : ''}" data-lesson="${l.id}">Unitat ${l.n} <span class="lb-chip-n">${done}/${l.ex.length}</span></button>`;
+        }).join('');
+        document.querySelectorAll('#lbLessonChips [data-lesson]').forEach(b => b.onclick = () => openLesson(b.dataset.lesson, true));
+    }
+
+    function openLesson(id, scroll) {
+        curLesson = id;
+        try { localStorage.setItem('llibre-lesson', id); } catch (e) {}
+        const l = LESSONS.find(x => x.id === id);
+        const body = document.getElementById('lbLessonBody');
+        body.innerHTML = `<div class="lb-lesson-head"><div class="lb-lesson-title">${l.n} · ${esc(l.title)}</div><div class="lb-lesson-sub">${esc(l.level)} · ${esc(l.theme)} · pàg. ${l.page}–${l.page + 5}</div><div class="lb-lesson-goal">${esc(l.goal)}</div><button class="lb-back" type="button">📑 Veure l'índex</button></div>`;
+        body.querySelector('.lb-back').onclick = () => { showIndex(true); window.scrollTo({ top: document.getElementById('tab-llibre').getBoundingClientRect().top + window.pageYOffset - 10, behavior: 'smooth' }); };
+        l.ex.forEach((ex, i) => { const c = document.createElement('div'); c.className = 'lb-card'; c.dataset.i = i; body.appendChild(c); renderCard(c, l, i); });
+        renderChips();
+        if (scroll) window.scrollTo({ top: body.getBoundingClientRect().top + window.pageYOffset - 20, behavior: 'smooth' });
+    }
+
+    function renderCard(card, lesson, idx) {
+        const ex = lesson.ex[idx], key = exKey(lesson, idx);
+        let items = typeof ex.items === 'function' ? ex.items() : ex.items.slice();
+        if (ex.shuffle) items = sh(items);
+        const st = { right: 0, answered: 0, n: items.length };
+        const mark = BEST[key] === 'full' ? ' ✅' : '';
+        let html = `<div class="lb-card-head"><span class="lb-card-title">${esc(ex.title)}${mark}</span><span class="lb-score">0 / ${items.length}</span></div><div class="lb-instr">${esc(ex.instr)}</div>`;
+        items.forEach((it, j) => {
+            html += `<div class="lb-item" data-j="${j}">`;
+            if (ex.type === 'choice') {
+                const opts = it.opts || ex.opts;
+                html += (it.say ? sayBtn(it.say) : '') + `<span class="lb-q">${it.q ? esc(it.q) : 'Escolta…'}</span>`;
+                html += `<div class="lb-opts">${opts.map(o => `<button class="lb-opt" data-o="${esc(o)}">${esc(o)}</button>`).join('')}</div>`;
+            } else {
+                const w = Math.max(70, Math.max(...it.a.map(a => a.length)) * 11 + 24);
+                const parts = it.t.split('___');
+                html += (it.say ? sayBtn(it.say) : '') + esc(parts[0]) +
+                    `<input class="lb-gap" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" style="width:${w}px">` +
+                    esc(parts[1] || '') + '<span class="lb-fix"></span>';
+            }
+            html += '</div>';
+        });
+        html += '<div class="lb-actions">';
+        if (ex.type === 'gap') html += '<button class="lb-btn lb-primary lb-chk">Comprova</button><button class="lb-btn lb-sol">Solucions</button>';
+        html += '<button class="lb-btn lb-rst">Torna a començar</button></div>';
+        card.innerHTML = html;
+
+        const scoreEl = card.querySelector('.lb-score');
+        const update = () => {
+            scoreEl.textContent = `${st.right} / ${st.n}`;
+            const finished = st.answered === st.n;
+            scoreEl.classList.toggle('done', finished && st.right === st.n);
+            if (finished) {
+                const prev = BEST[key];
+                if (st.right === st.n) BEST[key] = 'full'; else if (prev !== 'full') BEST[key] = 'part';
+                if (BEST[key] !== prev) { saveBest(); renderChips(); }
+            }
+        };
+        card.querySelectorAll('[data-say]').forEach(b => b.onclick = () => speak(b.dataset.say));
+        card.querySelector('.lb-rst').onclick = () => renderCard(card, lesson, idx);
+
+        if (ex.type === 'choice') {
+            card.querySelectorAll('.lb-item').forEach(row => {
+                const it = items[+row.dataset.j];
+                const btns = row.querySelectorAll('.lb-opt');
+                btns.forEach(b => b.onclick = () => {
+                    btns.forEach(x => { x.disabled = true; if (x.dataset.o === it.a) x.classList.add('ok'); });
+                    const ok = b.dataset.o === it.a;
+                    if (!ok) b.classList.add('bad');
+                    if (it.say && !it.q) row.querySelector('.lb-q').textContent = it.say;
+                    st.answered++; if (ok) st.right++;
+                    update();
+                });
+            });
+        } else {
+            const inputs = [...card.querySelectorAll('.lb-gap')];
+            const isOk = (inp, j) => items[j].a.some(a => norm(a) === norm(inp.value));
+            const accentOnly = (inp, j) => items[j].a.find(a => fold(norm(a)) === fold(norm(inp.value)));
+            const mark1 = (inp, j, showSol) => {
+                const ok = isOk(inp, j), fix = inp.parentElement.querySelector('.lb-fix');
+                inp.classList.toggle('ok', ok); inp.classList.toggle('bad', !ok);
+                const acc = !ok && inp.value.trim() && accentOnly(inp, j);
+                fix.textContent = ok ? '' : acc ? '⚠ Compte amb l\'accent: ' + acc : showSol ? '→ ' + items[j].a.join(' / ') : '';
+                return ok;
+            };
+            const check = () => {
+                st.right = 0; st.answered = st.n;
+                inputs.forEach((inp, j) => { if (mark1(inp, j, false)) st.right++; });
+                update();
+            };
+            card.querySelector('.lb-chk').onclick = check;
+            card.querySelector('.lb-sol').onclick = () => inputs.forEach((inp, j) => mark1(inp, j, true));
+            inputs.forEach((inp, j) => inp.addEventListener('keydown', e => {
+                if (e.key === 'Enter') { e.preventDefault(); if (inputs[j + 1]) inputs[j + 1].focus(); else check(); }
+            }));
+        }
+    }
+
+    let ready = false;
+    window.renderLlibre = function () {
+        if (!ready) { ready = true; initIndex(); openLesson(curLesson, false); }
+    };
+})();
+</script>
+
 </body>
 </html>
