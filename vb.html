@@ -383,6 +383,9 @@
   .lb-lesson-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--cream); }
   .lb-lesson-sub { font-size: 0.75rem; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
   .lb-lesson-goal { font-size: 0.85rem; color: #b8a478; font-style: italic; margin-top: 4px; }
+  .lb-print-link { margin-left: 14px; }
+  #lbPrintFab { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 9999; display: none; align-items: center; gap: 6px; padding: 12px 18px; background: var(--gold); color: var(--dark); border: none; border-radius: 999px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; box-shadow: 0 4px 14px rgba(0,0,0,0.35); cursor: pointer; }
+  body.lb-on #lbPrintFab { display: flex; }
   .lb-back { background: none; border: none; color: var(--gold); font-size: 0.82rem; cursor: pointer; padding: 0; margin-top: 6px; font-family: inherit; }
   .lb-card { background: var(--dark2); border: 1px solid #c9a84c25; border-radius: 1rem; padding: 1rem 1.1rem; margin-bottom: 1rem; box-shadow: var(--shadow); }
   .lb-card.lb-flash { outline: 2px solid var(--gold); }
@@ -416,7 +419,7 @@
       @page { size: A4; margin: 12mm; }
       html, body { background: #fff !important; background-image: none !important; padding: 0 !important; margin: 0 !important; min-height: 0 !important; }
       body * { color: #111 !important; box-shadow: none !important; text-shadow: none !important; animation: none !important; transition: none !important; }
-      nav, .scorebar, .print-btn-wrap, .lb-tools, .lb-filters, .lb-index, .lb-chips, .lb-actions, .lb-back, .lb-say, .lb-intro, header .subtitle-none { display: none !important; }
+      #lbPrintFab, .lb-print-link, nav, .scorebar, .print-btn-wrap, .lb-tools, .lb-filters, .lb-index, .lb-chips, .lb-actions, .lb-back, .lb-say, .lb-intro, header .subtitle-none { display: none !important; }
       .card, .lb-card {
         background: #fff !important; border: 1px solid #999 !important; border-radius: 6px !important;
         break-inside: avoid; page-break-inside: avoid; margin: 0 0 10px !important; padding: 10px 12px !important;
@@ -1347,6 +1350,7 @@
 </div>
 
 
+<button id="lbPrintFab" type="button" onclick="lbPrint()" aria-label="Imprimir">🖨️ Imprimir</button>
 <!-- ========== LLIBRE ========== -->
 <div id="tab-llibre" class="section">
   <div class="exercise-label">El llibre de català</div>
@@ -1354,6 +1358,7 @@
   <div class="lb-tools">
     <input id="lbSearch" class="lb-search" type="search" placeholder="🔍 Cerca: ser, alfabet, nombres, agradar, dies…" autocomplete="off">
     <button id="lbIndexBtn" class="lb-btn lb-primary" type="button">📑 Índex</button>
+    <button class="lb-btn" type="button" onclick="lbPrint()">🖨️ Imprimir</button>
   </div>
   <div class="lb-filters" id="lbFilters"></div>
   <div id="lbIndex" class="lb-index" style="display:none"></div>
@@ -2017,6 +2022,7 @@ function showTab(id) {
   event.target.classList.add('active');
   if(id === 'tab-presentacio') initPresentacio();
   if(id === 'tab-llibre') renderLlibre();
+  document.body.classList.toggle('lb-on', id === 'tab-llibre');
 }
 
 // ======================================
@@ -5550,7 +5556,7 @@ function printCurrentSection() {
         try { localStorage.setItem('llibre-lesson', id); } catch (e) {}
         const l = LESSONS.find(x => x.id === id);
         const body = document.getElementById('lbLessonBody');
-        body.innerHTML = `<div class="lb-lesson-head"><div class="lb-lesson-title">${l.n} · ${esc(l.title)}</div><div class="lb-lesson-sub">${esc(l.level)} · ${esc(l.theme)} · pàg. ${l.page}–${l.page + 5}</div><div class="lb-lesson-goal">${esc(l.goal)}</div><button class="lb-back" type="button">📑 Veure l'índex</button></div>`;
+        body.innerHTML = `<div class="lb-lesson-head"><div class="lb-lesson-title">${l.n} · ${esc(l.title)}</div><div class="lb-lesson-sub">${esc(l.level)} · ${esc(l.theme)} · pàg. ${l.page}–${l.page + 5}</div><div class="lb-lesson-goal">${esc(l.goal)}</div><button class="lb-back" type="button">📑 Veure l'índex</button><button class="lb-back lb-print-link" type="button" onclick="lbPrint()">🖨️ Imprimir aquesta unitat</button></div>`;
         body.querySelector('.lb-back').onclick = () => { showIndex(true); window.scrollTo({ top: document.getElementById('tab-llibre').getBoundingClientRect().top + window.pageYOffset - 10, behavior: 'smooth' }); };
         l.ex.forEach((ex, i) => { const c = document.createElement('div'); c.className = 'lb-card'; c.dataset.i = i; body.appendChild(c); renderCard(c, l, i); });
         renderChips();
@@ -5635,6 +5641,11 @@ function printCurrentSection() {
         }
     }
 
+    window.lbPrint = function () {
+        showIndex(false);
+        document.getElementById('lbSearch').value = '';
+        setTimeout(() => window.print(), 50);
+    };
     let ready = false;
     window.renderLlibre = function () {
         if (!ready) { ready = true; initIndex(); openLesson(curLesson, false); }
