@@ -642,6 +642,12 @@
       .phrase-card { margin: 0 1rem 4rem; padding: 2rem 1.5rem; }
       .features { gap: 0; margin: 3rem 1rem 0; }
     }
+    html, body { overflow-x: hidden; }
+    @media (max-width: 600px) {
+      .features { grid-template-columns: repeat(3, 1fr); margin: 3rem 1rem 0; max-width: calc(100% - 2rem); }
+      .feat-card { min-width: 0; padding-left: 0.3rem; padding-right: 0.3rem; }
+      .scroll-indicator { display: none; }
+    }
   </style>
 </head>
 <body>
