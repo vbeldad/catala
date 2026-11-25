@@ -413,7 +413,8 @@
   .lb-bank-o { background: var(--dark2); color: var(--cream); border: 1px solid #c9a84c50; border-radius: 0.5rem; font-size: 0.88rem; padding: 4px 9px; cursor: pointer; font-family: inherit; text-align: left; }
   .lb-bank-o b { color: var(--gold); margin-right: 4px; }
   .lb-bank-o.used { opacity: .4; text-decoration: line-through; }
-  .lb-bank-in { display: block; width: 100%; margin-top: 5px; padding: 6px 9px; font-size: 0.95rem; }
+  .lb-bank-in { display: inline-block; max-width: 100%; padding: 3px 7px; font-size: 0.95rem; vertical-align: baseline; margin: 2px 0; }
+  .lb-item .lb-fix { margin-left: 6px; }
   .lb-fix { color: #4ade80; font-size: 0.82rem; margin-left: 6px; }
   .lb-qes { display: block; font-size: 0.85rem; color: #a89060; font-style: italic; margin-top: 3px; }
   .lb-say { background: #c9a84c25; color: var(--gold-light); border: none; border-radius: 0.4rem; padding: 2px 8px; font-size: 0.9rem; margin-right: 6px; cursor: pointer; }
@@ -441,7 +442,7 @@
       .lb-opt.ok, .lb-gap.ok { background: #e3f6e8 !important; border-color: #2e7d32 !important; }
       .lb-bank { background: #fff !important; border: 1px dashed #888 !important; }
       .lb-bank-o { background: #fff !important; border: 1px solid #999 !important; }
-      .lb-bank-in { min-height: 1.8em; border: none !important; border-bottom: 1px solid #888 !important; border-radius: 0 !important; background: #fff !important; }
+      .lb-bank-in { min-height: 1.4em; border: none !important; border-bottom: 1px solid #888 !important; border-radius: 0 !important; background: #fff !important; }
       .lb-opt.bad, .lb-gap.bad { background: #fdecea !important; border-color: #c62828 !important; }
       .lb-gap {
         display: inline-block !important; background: #fff !important; border: none !important; border-bottom: 1px solid #333 !important;
@@ -5686,10 +5687,11 @@ function printCurrentSection() {
         const st = { right: 0, answered: 0, n: items.length };
         const mark = BEST[key] === 'full' ? ' ✅' : '';
         // Mode «banc»: moltes opcions compartides → es mostren una sola vegada a dalt i a cada pregunta s'escriu la resposta
-        const bank = ex.type === 'choice' && ex.opts && ex.opts.length >= 5 && !/🔊/.test(ex.instr) && items.every(it => !it.opts || it.opts === ex.opts);
+        const bank = ex.type === 'choice' && ex.opts && ex.opts.length >= 2 && !/🔊/.test(ex.instr) && items.every(it => !it.opts || it.opts === ex.opts);
         const bankOpts = bank ? sh(ex.opts.slice()) : [];
         const L = k => String.fromCharCode(65 + k);
-        const instr = bank ? ex.instr.replace(/^Tria /, 'Escriu ').replace(/Tria\.?$/, 'Escriu-ho.') + ' Escriu la resposta (o la seva lletra) a cada quadre. Pots tocar una opció per copiar-la al quadre.' : ex.instr;
+        const instr = bank ? ex.instr.replace(/\b([Tt])ria\b/g, (m, t) => t === 'T' ? 'Escriu' : 'escriu') + ' Escriu la resposta (o la lletra) al quadre; també pots tocar una opció.' : ex.instr;
+        const bankW = bank ? Math.min(240, Math.max(70, Math.max(...ex.opts.map(o => o.length)) * 9 + 26)) : 0;
         let html = `<div class="lb-card-head"><span class="lb-card-title">${esc(ex.title)}${mark}</span><span class="lb-score">0 / ${items.length}</span></div><div class="lb-instr">${esc(instr)}</div>`;
         if (bank) html += `<div class="lb-bank"><div class="lb-bank-t">📋 Opcions</div><div class="lb-bank-list">${bankOpts.map((o, k) => `<button class="lb-bank-o" type="button" data-k="${k}"><b>${L(k)}</b>${esc(o)}</button>`).join('')}</div></div>`;
         items.forEach((it, j) => {
@@ -5698,8 +5700,10 @@ function printCurrentSection() {
             const es = oj >= 0 ? qEs(lesson, idx, oj) : '';
             const esHtml = es ? `<span class="lb-qes">${esc(es)}</span>` : '';
             if (bank) {
-                html += `<span class="lb-q">${esc(it.q)}</span>` + esHtml +
-                    `<input class="lb-gap lb-bank-in" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Escriu aquí…"><span class="lb-fix"></span>`;
+                const inp = `<input class="lb-gap lb-bank-in" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" style="width:${bankW}px">`;
+                const q = String(it.q);
+                html += (q.includes('___') ? q.split('___').map(esc).join(inp) : `<span class="lb-q">${esc(q)}</span> ` + inp) +
+                    '<span class="lb-fix"></span>' + esHtml;
             } else if (ex.type === 'choice') {
                 const opts = it.opts || ex.opts;
                 html += (it.say ? sayBtn(it.say) : '') + `<span class="lb-q">${it.q ? esc(it.q) : 'Escolta…'}</span>` + esHtml;
