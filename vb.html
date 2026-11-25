@@ -440,6 +440,77 @@
       .lb-lesson-head { break-after: avoid; page-break-after: avoid; margin: 0 0 8px !important; }
       .lb-qes { color: #666 !important; font-size: 9.5pt !important; line-height: 1.3 !important; }
     }
+  /* ===== GRAMÀTICA ===== */
+  .gr-tools { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin: 0.6rem 0 0.4rem; }
+  .gr-tools .lb-search, #grSearch { flex: 1 1 220px; min-width: 0; background: var(--dark2); border: 1px solid #c9a84c40; border-radius: 2rem; color: var(--cream); padding: 0.55rem 1rem; font-family: inherit; font-size: 0.9rem; outline: none; }
+  #grSearch:focus { border-color: var(--gold); }
+  .gr-prog { font-size: 0.75rem; color: #a89060; margin: 2px 0 8px; }
+  .gr-msg { display: none; background: #3d2e10; border: 1px solid var(--gold); color: var(--gold-light); border-radius: 0.6rem; padding: 8px 12px; font-size: 0.85rem; margin: 6px 0; }
+  .gr-idx-item { display: flex; width: 100%; gap: 10px; align-items: center; text-align: left; background: var(--dark2); border: 1px solid #c9a84c25; border-radius: 0.8rem; margin-bottom: 6px; padding: 10px 12px; cursor: pointer; font-family: inherit; color: var(--cream); }
+  .gr-idx-item:hover { border-color: var(--gold); }
+  .gr-idx-txt { flex: 1; display: flex; flex-direction: column; }
+  .gr-idx-es { font-size: 0.76rem; color: #a89060; }
+  .gr-done { color: #4ade80; font-weight: 700; }
+  .gr-arrow { color: var(--gold); font-size: 1.2rem; }
+  .gr-nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 6px 0 10px; flex-wrap: wrap; }
+  .gr-card { padding: 1.2rem 1.2rem 1rem; }
+  .gr-topic-head { margin-bottom: 0.8rem; }
+  .gr-body { font-size: 0.95rem; line-height: 1.6; color: var(--cream); }
+  .gr-body p { margin: 0.5rem 0; }
+  .gr-h { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.08rem; margin: 1.1rem 0 0.3rem; }
+  .gr-tw { overflow-x: auto; margin: 0.6rem 0; }
+  .gr-table { border-collapse: collapse; width: 100%; font-size: 0.86rem; }
+  .gr-table th { background: #c9a84c25; color: var(--gold-light); text-align: left; font-weight: 500; padding: 6px 8px; border: 1px solid #c9a84c30; }
+  .gr-table td { padding: 6px 8px; border: 1px solid #c9a84c20; vertical-align: top; }
+  .gr-table tr:nth-child(even) td { background: #1a120860; }
+  .gr-ex { list-style: none; margin: 0.5rem 0; padding: 0; }
+  .gr-ex li { padding: 6px 10px; border-left: 3px solid var(--gold); background: #1a120880; margin-bottom: 4px; border-radius: 0 0.4rem 0.4rem 0; }
+  .gr-ca { display: block; color: var(--cream); cursor: pointer; }
+  .gr-ca::after { content: ' 🔊'; font-size: 0.7rem; opacity: 0.45; }
+  .gr-es { display: block; font-size: 0.8rem; color: #a89060; font-style: italic; }
+  .gr-note, .gr-warn { border-radius: 0.6rem; padding: 8px 12px; margin: 0.7rem 0; font-size: 0.88rem; line-height: 1.5; }
+  .gr-note { background: #1a3320; border: 1px solid #27ae6060; color: #c8f7d4; }
+  .gr-warn { background: #2e1a08; border: 1px solid #e6a23c70; color: #f5d9a8; }
+  .gr-quiz { margin-top: 1.2rem; border-top: 1px dashed #c9a84c40; padding-top: 0.8rem; }
+  .gr-quiz-t { font-weight: 600; color: var(--gold); margin-bottom: 6px; }
+  .gr-q { padding: 6px 0; }
+  .gr-q-t { font-size: 0.92rem; margin-bottom: 4px; }
+  .gr-qres { margin-top: 10px; font-size: 0.92rem; color: var(--gold-light); }
+  .gr-qres .lb-btn { margin-left: 8px; }
+  .gr-pn { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 1rem; }
+  .gr-pn .lb-btn { max-width: 48%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .gr-pr-opts { display: flex; flex-direction: column; gap: 6px; margin: 8px 0; font-size: 0.88rem; }
+  .gr-pr-group { background: var(--dark2); border: 1px solid #c9a84c25; border-radius: 0.8rem; padding: 8px 12px; margin: 8px 0; }
+  .gr-pr-gl { display: block; font-weight: 600; color: var(--gold); padding: 4px 0; cursor: pointer; }
+  .gr-pr-item { display: block; padding: 5px 0 5px 20px; font-size: 0.9rem; cursor: pointer; border-top: 1px solid #c9a84c15; }
+  .gr-pr-opts input, .gr-pr-group input { accent-color: var(--gold); width: 16px; height: 16px; vertical-align: -3px; margin-right: 6px; }
+  #grPrint { display: none; }
+
+  @media print {
+    body.gr-printing > *:not(#grPrint) { display: none !important; }
+    body.gr-printing #grPrint { display: block !important; font-size: 10.5pt; line-height: 1.45; }
+    #grPrint .gr-pr-title { font-size: 16pt; font-weight: 700; margin-bottom: 2px; }
+    #grPrint .gr-pr-sub { font-size: 9pt; color: #555 !important; margin-bottom: 10px; border-bottom: 1px solid #999; padding-bottom: 6px; }
+    #grPrint .gr-pr-topic { margin-bottom: 14px; }
+    #grPrint .gr-pr-break { break-before: page; page-break-before: always; }
+    #grPrint .lb-lesson-title { font-size: 14pt; font-weight: 700; }
+    #grPrint .lb-lesson-sub { font-size: 8pt; text-transform: uppercase; letter-spacing: .06em; }
+    #grPrint .lb-lesson-goal { font-style: italic; font-size: 10pt; }
+    #grPrint .gr-topic-head, #grPrint .gr-h { break-after: avoid; page-break-after: avoid; }
+    #grPrint .gr-h { font-size: 11.5pt; margin: 8px 0 3px; }
+    #grPrint .gr-table { font-size: 9.5pt; }
+    #grPrint .gr-table th { background: #eee !important; border: 1px solid #888 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    #grPrint .gr-table td { background: #fff !important; border: 1px solid #aaa !important; }
+    #grPrint .gr-tw, #grPrint .gr-table tr, #grPrint .gr-ex li, #grPrint .gr-note, #grPrint .gr-warn, #grPrint .gr-q { break-inside: avoid; page-break-inside: avoid; }
+    #grPrint .gr-tw { overflow: visible; }
+    #grPrint .gr-ex li { background: #fff !important; border-left: 3px solid #888 !important; padding: 2px 8px; }
+    #grPrint .gr-ca::after { content: ''; }
+    #grPrint .gr-es { color: #555 !important; }
+    #grPrint .gr-note, #grPrint .gr-warn { background: #fff !important; border: 1px solid #888 !important; }
+    #grPrint .gr-quiz { border-top: 1px dashed #888; }
+    #grPrint .gr-pr-sol { break-before: page; page-break-before: always; font-size: 9.5pt; }
+    #grPrint .gr-pr-sol > div { margin: 3px 0; }
+  }
 </style>
 </head>
 <body>
@@ -450,7 +521,7 @@
 </header>
 
 <div class="print-btn-wrap" style="text-align:center;padding:0.5rem 1rem 0;">
-  <button onclick="window.print()" style="background:transparent;border:1px solid #c9a84c60;color:#a89060;padding:0.4rem 1.2rem;border-radius:2rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.82rem;" >🖨️ Imprimir</button>
+  <button onclick="(document.getElementById('tab-gramatica').classList.contains('active') && window.gramPrintCurrent) ? gramPrintCurrent() : window.print()" style="background:transparent;border:1px solid #c9a84c60;color:#a89060;padding:0.4rem 1.2rem;border-radius:2rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.82rem;" >🖨️ Imprimir</button>
 </div>
 
 <div class="scorebar">
@@ -468,6 +539,7 @@
   <button onclick="showTab('tab-calendari')">📅 Calendari</button>
   <button onclick="showTab('tab-presentacio')">🎤 Presentació</button>
   <button onclick="showTab('tab-llibre')">📗 Llibre</button>
+  <button onclick="showTab('tab-gramatica')">📐 Gramàtica</button>
 </nav>
 
 <main>
@@ -1368,7 +1440,24 @@
   <div id="lbLessonBody"></div>
 </div>
 
+<!-- ========== GRAMÀTICA ========== -->
+<div id="tab-gramatica" class="section">
+  <div class="exercise-label">Normes de gramàtica</div>
+  <p class="lb-intro" style="display:block">Les normes del català explicades en castellà, amb exemples i preguntes per repassar: apòstrofs, accents, pronoms, verbs… Busca un tema o obre l'índex. Toca un exemple 🔊 per escoltar-lo.</p>
+  <div class="gr-tools">
+    <input id="grSearch" type="search" placeholder="🔍 Cerca: apòstrof, accent, hi ha, pronoms…" autocomplete="off">
+    <button id="grIndexBtn" class="lb-btn lb-primary" type="button">📑 Índex</button>
+    <button id="grPrintBtn" class="lb-btn" type="button">🖨️ Imprimir per temes</button>
+  </div>
+  <div class="gr-prog" id="grProg"></div>
+  <div class="gr-msg" id="grMsg"></div>
+  <div id="grIndex"></div>
+  <div id="grPrintPanel" style="display:none"></div>
+  <div id="grTopic" style="display:none"></div>
+</div>
+
 </main>
+<div id="grPrint"></div>
 
 <script>
 // ======================================
@@ -2024,6 +2113,8 @@ function showTab(id) {
   event.target.classList.add('active');
   if(id === 'tab-presentacio') initPresentacio();
   if(id === 'tab-llibre') renderLlibre();
+  if(id === 'tab-gramatica') renderGramatica();
+  document.body.classList.remove('gr-printing');
   document.body.classList.toggle('lb-on', id === 'tab-llibre');
 }
 
@@ -5662,6 +5753,739 @@ function printCurrentSection() {
     window.renderLlibre = function () {
         if (!ready) { ready = true; initIndex(); openLesson(curLesson, false); }
     };
+})();
+</script>
+
+<script>
+/* ===== GRAMÀTICA: normes explicades, índex i impressió per temes ===== */
+(function () {
+    // ===== CONTINGUT: temes de gramàtica =====
+    // Cada tema: id, g (bloc), t (títol català), es (títol castellà), k (paraules clau), b (explicació HTML), q (preguntes de repàs)
+    const T = (head, rows) => '<div class="gr-tw"><table class="gr-table"><thead><tr>' + head.map(h => '<th>' + h + '</th>').join('') +
+        '</tr></thead><tbody>' + rows.map(r => '<tr>' + r.map(c => '<td>' + c + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>';
+    const E = list => '<ul class="gr-ex">' + list.map(([ca, es]) => '<li><span class="gr-ca">' + ca + '</span>' + (es ? '<span class="gr-es">' + es + '</span>' : '') + '</li>').join('') + '</ul>';
+    const R = txt => '<div class="gr-note">💡 <b>Recorda:</b> ' + txt + '</div>';
+    const W = txt => '<div class="gr-warn">⚠️ ' + txt + '</div>';
+    const H = txt => '<h4 class="gr-h">' + txt + '</h4>';
+    const P = txt => '<p>' + txt + '</p>';
+
+    const GROUPS = [
+        ['orto', '✍️ Ortografia i pronunciació'],
+        ['nom', '🏷️ Articles, noms i adjectius'],
+        ['pron', '👥 Pronoms'],
+        ['verb', '📖 Verbs'],
+        ['frase', '🧩 La frase'],
+        ['err', '🚫 Errors freqüents']
+    ];
+
+    const TOPICS = [
+    // ---------------- ORTOGRAFIA ----------------
+    { id: 'alfabet', g: 'orto', t: "L'alfabet i les vocals", es: 'El alfabeto y las vocales', k: 'abecedari lletres vocal neutra oberta tancada pronunciacio',
+      b: P('El alfabeto catalán tiene <b>26 letras</b>. Los nombres de las letras son femeninos: <i>la a, la be, la essa…</i>') +
+        T(['Lletra', 'Nom', 'Lletra', 'Nom'], [
+            ['a', 'a', 'n', 'ena'], ['b', 'be (alta)', 'o', 'o'], ['c', 'ce', 'p', 'pe'], ['d', 'de', 'q', 'cu'],
+            ['e', 'e', 'r', 'erra'], ['f', 'efa', 's', 'essa'], ['g', 'ge', 't', 'te'], ['h', 'hac', 'u', 'u'],
+            ['i', 'i', 'v', 've (baixa)'], ['j', 'jota', 'w', 've doble'], ['k', 'ca', 'x', 'ics / xeix'],
+            ['l', 'ela', 'y', 'i grega'], ['m', 'ema', 'z', 'zeta']]) +
+        H('Las vocales') +
+        P('En castellano hay 5 sonidos vocálicos. En catalán hay más, porque la <b>e</b> y la <b>o</b> pueden ser <b>abiertas</b> (è, ò) o <b>cerradas</b> (é, ó) cuando son tónicas (llevan el golpe de voz).') +
+        E([['<b>è</b> oberta: cafè, mel, peu', 'sonido abierto, boca más abierta'], ['<b>é</b> tancada: també, més, carrer', 'como la e castellana'],
+           ['<b>ò</b> oberta: això, dona, porta', 'sonido abierto'], ['<b>ó</b> tancada: cançó, molt, fosc', 'como la o castellana']]) +
+        H('La vocal neutra (catalán central)') +
+        P('En el catalán de Barcelona, cuando la <b>a</b> o la <b>e</b> no son tónicas suenan igual: un sonido suave y relajado, entre a y e, llamado <b>vocal neutra</b>. Y la <b>o</b> átona suena como <b>u</b>.') +
+        E([['casa → [cà-sə]', 'la última a suena neutra'], ['pare → [pà-rə]', 'la e final suena neutra'], ['Barcelona → [bər-sə-ló-nə]', ''], ['olives → [u-lí-vəs]', 'la o átona suena u']]) +
+        R('en valenciano y en el catalán occidental (Lleida) la a y la e átonas sí se distinguen. Las dos pronunciaciones son correctas.'),
+      q: [['¿Cuántas letras tiene el alfabeto catalán?', ['24', '26', '27'], 1],
+          ['En «també», la é es…', ['abierta', 'cerrada', 'neutra'], 1],
+          ['En catalán central, la «o» átona de «olives» suena como…', ['o', 'a', 'u'], 2]] },
+
+    { id: 'sons', g: 'orto', t: 'Sons i lletres especials', es: 'Sonidos y letras especiales', k: 'ny ll x tx ig tg tj g j s ss z c ç sorda sonora h pronunciar',
+      b: P('Algunas letras o grupos de letras no existen en castellano o suenan distinto:') +
+        T(['Grafia', 'Sona com…', 'Exemples'], [
+            ['<b>ny</b>', 'ñ', 'any (año), Catalunya, senyor'],
+            ['<b>ll</b>', 'll bien pronunciada (no «y»)', 'lluna, cavall, llibre'],
+            ['<b>x</b>, <b>ix</b>', '«sh» inglesa', 'xocolata, caixa, peix'],
+            ['<b>tx</b>', 'ch castellana', 'cotxe, fletxa, cotxera'],
+            ['<b>-ig</b> (final)', 'ch castellana', 'maig, mig, roig, passeig'],
+            ['<b>tg</b>, <b>tj</b>', '«dj» (como la j inglesa de <i>jazz</i>)', 'metge, viatge, platja'],
+            ['<b>g</b> (+e, i), <b>j</b>', 'como la j francesa (no como la j castellana)', 'gent, girar, joc, menjar'],
+            ['<b>h</b>', 'no suena nunca', 'home, hora, hotel'],
+            ['<b>v</b>', 'igual que la b (catalán central)', 'vi, veure, vaca']]) +
+        H('La s: sorda o sonora') +
+        P('El catalán distingue la <b>s sorda</b> (como la s castellana) y la <b>s sonora</b> (como un zumbido de abeja, «zzz»).') +
+        T(['S sorda [s]', 'S sonora [z]'], [
+            ['s inicial: <i>sol, sopa</i>', 's entre vocales: <i>casa, rosa, cosa</i>'],
+            ['ss entre vocales: <i>passar, rossa, tassa</i>', 'z: <i>zero, zona, dotze, tretze</i>'],
+            ['c + e, i: <i>cel, cine, cinc</i>', 's + consonante sonora: <i>esvelt</i>'],
+            ['ç + a, o, u y final: <i>plaça, cançó, feliç</i>', '']]) +
+        E([['rosa / rossa', 'rosa (flor) / rubia'], ['casa / caça', 'casa / caza'], ['cosí / cossí', 'primo / barreño']]) +
+        R('<b>ç</b> solo se escribe delante de a, o, u y a final de palabra. Nunca delante de e, i: <i>plaça → places</i>, <i>feliç → felices</i>.') +
+        W('Excepciones de j delante de e: <i>jersei, Jesús, jeure, injecció, objecte</i>.'),
+      q: [['¿Cómo suena «tx» en «cotxe»?', ['como sh', 'como ch', 'como k'], 1],
+          ['¿Qué palabra tiene s sonora?', ['passar', 'casa', 'sol'], 1],
+          ['¿Cuál está bien escrita?', ['plaçes', 'places', 'plazes'], 1]] },
+
+    { id: 'accent', g: 'orto', t: "L'accent gràfic", es: 'Las reglas de acentuación', k: 'accent accents agut greu tilde aguda plana esdruixola accentuar',
+      b: P('El catalán tiene <b>dos acentos</b>:') +
+        T(['Accent', 'Forma', 'Sobre…'], [
+            ['<b>greu</b> (grave)', 'à è ò', '<b>a</b> siempre lleva greu: <i>català, mà</i>. La è y la ò abiertas: <i>cafè, això</i>'],
+            ['<b>agut</b> (agudo)', 'é í ó ú', '<b>i</b> y <b>u</b> siempre llevan agut: <i>camí, algú</i>. La é y la ó cerradas: <i>també, cançó</i>']]) +
+        H('¿Cuándo se pone acento?') +
+        P('Las reglas se parecen a las del castellano, pero <b>no son iguales</b>:') +
+        T(['Tipus de paraula', 'Porta accent si acaba en…', 'Exemples'], [
+            ['<b>Aguda</b> (golpe en la última sílaba)', 'vocal, vocal + s, <b>-en</b>, <b>-in</b>', 'cafè, català, anglès, camí, també, entén, ningú'],
+            ['<b>Plana</b> (golpe en la penúltima)', 'todo lo <b>demás</b> (no vocal, -s, -en, -in)', 'fàcil, mòbil, telèfon, néixer, àlbum, dòlar'],
+            ['<b>Esdrúixola</b> (antepenúltima)', '<b>siempre</b>', 'música, pàgina, època, pràctica']]) +
+        E([['canta<b>ràs</b>, fran<b>cès</b>, a<b>quí</b>', 'agudas en vocal / -s → acento'], ['ca<b>rrer</b>, Na<b>dal</b>, par<b>lar</b>', 'agudas en consonante → sin acento'],
+           ['<b>jo</b>ve, <b>e</b>xamen, <b>lla</b>pis', 'planas en vocal, -en, -is → sin acento (¡ojo: <i>examen</i> sin tilde!)'],
+           ['<b>fà</b>cil, di<b>fí</b>cil, <b>né</b>ixer', 'planas en consonante → acento']]) +
+        H('¿È o é? ¿Ò o ó?') +
+        P('Depende de la pronunciación (abierta o cerrada). Trucos útiles:') +
+        E([['-ció, -sió siempre con <b>ó</b>', 'informació, cançó, avió, televisió'], ['nacionalidades y -ès: <b>è</b>', 'anglès, francès, interès, cafè'],
+           ['més, només, també, després, què, perquè', 'palabras muy frecuentes: apréndelas de memoria'], ['això, allò, història, mòbil', 'con ò abierta']]) +
+        R('las palabras terminadas en vocal + <i>ia, ie, io, ua, ue, uo</i> se consideran esdrúixoles y llevan acento: <i>gràcies, història, família, farmàcia</i>… ¡pero <i>aigua</i> y <i>llengua</i> no llevan (gu + a)!'),
+      q: [['¿Qué acento lleva siempre la «a»?', ['agut (á)', 'greu (à)', 'depende'], 1],
+          ['¿Cuál está bien escrita?', ['exàmen', 'examen', 'exámen'], 1],
+          ['La palabra «fàcil» lleva acento porque es…', ['aguda terminada en vocal', 'plana terminada en consonante', 'esdrúixola'], 1]] },
+
+    { id: 'diacritic', g: 'orto', t: "L'accent diacrític", es: 'El acento diacrítico', k: 'diacritic diacritics be deu es ma mes mon pel que se si sol son te us vos 2016',
+      b: P('El <b>acento diacrítico</b> sirve para distinguir dos palabras que se escriben igual pero significan cosas diferentes (como en castellano <i>tú / tu, sí / si</i>).') +
+        P('Desde la reforma del IEC (2016) solo quedan <b>15 palabras</b> con acento diacrítico:') +
+        T(['Amb accent', 'Significa', 'Sense accent', 'Significa'], [
+            ['bé', 'bien', 'be', 'cordero / letra b'], ['déu', 'dios', 'deu', 'diez / debe'], ['és', 'es (verbo ser)', 'es', 'se (pronombre)'],
+            ['mà', 'mano', 'ma', 'mi (posesivo antiguo)'], ['més', 'más', 'mes', 'mes'], ['món', 'mundo', 'mon', 'mi (posesivo antiguo)'],
+            ['pèl', 'pelo', 'pel', 'por el'], ['què', 'qué', 'que', 'que'], ['sé', 'sé (verbo saber)', 'se', 'se (pronombre)'],
+            ['sí', 'sí (afirmación)', 'si', 'si (condicional) / nota musical'], ['sòl', 'suelo', 'sol', 'sol / solo'], ['són', 'son (verbo ser)', 'son', 'sueño'],
+            ['té', 'tiene', 'te', 'te (pronombre) / té (infusión)'], ['ús', 'uso', 'us', 'os (pronombre)'], ['vós', 'vos (usted, antiguo)', 'vos', 'os (pronombre)']]) +
+        E([['Ell <b>és</b> metge i <b>es</b> diu Pau.', 'Él es médico y se llama Pau.'], ['Em fa mal la <b>mà</b>.', 'Me duele la mano.'],
+           ['Vull <b>més</b> pa aquest <b>mes</b>.', 'Quiero más pan este mes.'], ['La Marta <b>té</b> un <b>te</b> calent.', 'Marta tiene un té caliente.']]) +
+        W('Ya <b>no</b> llevan acento (aunque lo veas en libros antiguos): <i>dona</i> (mujer y «da»), <i>os</i> (oso y hueso), <i>adeu</i>, <i>soc</i>, <i>venen</i>, <i>net</i>…') +
+        R('los compuestos y derivados no lo llevan: <i>adeu, rodamon, contrapel</i>. Pero sí con guion: <i>pèl-roig, mà-llarg</i>.'),
+      q: [['«Ell ___ de Girona» (él es de Girona)', ['es', 'és'], 1],
+          ['«La infusión» en catalán se escribe…', ['el té', 'el te'], 1],
+          ['¿Lleva acento «dona» (mujer) según la norma actual?', ['Sí: dóna', 'No: dona'], 1]] },
+
+    { id: 'dieresi', g: 'orto', t: 'La dièresi', es: 'La diéresis', k: 'dieresi crema güe güi qüe qüi hiat veïna raïm',
+      b: P('La <b>dièresi</b> (¨) se usa en dos casos:') +
+        H('1. Para que suene la u en gue, gui, que, qui') +
+        P('Igual que en castellano (<i>pingüino</i>), pero también con <b>q</b>:') +
+        E([['pingüí, aigües, llengües', 'suena la u'], ['qüestió, freqüent, conseqüència', 'suena la u (en castellano no hay diéresis aquí)'], ['guerra, guitarra, quilo', 'la u no suena → sin diéresis']]) +
+        H('2. Para separar dos vocales (hiato)') +
+        P('Indica que la i o la u forman sílaba aparte y no hacen diptongo:') +
+        E([['veïna (ve-ï-na)', 'vecina'], ['raïm (ra-ïm)', 'uva'], ['països (pa-ï-sos)', 'países'], ['Lluïsa, diürn', '']]) +
+        W('<b>No</b> se pone diéresis en: <b>infinitivo, gerundio, futuro y condicional</b> de los verbos en -ir (<i>lluir, lluint, lluiré, lluiria</i>), en las terminaciones <b>-isme, -ista</b> (<i>egoisme, altruista</i>) ni en palabras con <b>prefijo</b> (<i>reunió, coincidir</i>).') +
+        R('si ya hay acento, no hace falta diéresis: <i>veí</i> (pero <i>veïna</i>).'),
+      q: [['¿Cuál está bien escrita?', ['frequent', 'freqüent', 'frecuent'], 1],
+          ['¿Cuál está bien escrita?', ['veina', 'veïna', 'veína'], 1],
+          ['El infinitivo de «lluïm» es…', ['lluïr', 'lluir'], 1]] },
+
+    { id: 'apostrof', g: 'orto', t: "L'apòstrof", es: 'El apóstrofo', k: 'apostrof apostrofar l d m t s n article de pronoms elisio',
+      b: P("El <b>apòstrof</b> (') sustituye una vocal que desaparece cuando dos palabras se juntan, para que suene mejor. En castellano casi no existe, pero en catalán es <b>obligatorio</b>.") +
+        H('¿Qué palabras se apostrofan?') +
+        T(['Paraula', 'Davant de vocal o h', 'Exemples'], [
+            ['<b>el</b> (artículo)', "l'", "l'home, l'arbre, l'hotel, l'Andreu"],
+            ['<b>la</b> (artículo)', "l'", "l'amiga, l'hora, l'escola, l'Anna"],
+            ['<b>de</b>', "d'", "got d'aigua, d'acord, d'hora, d'Andorra"],
+            ['<b>em, et, es, el, en</b> (pronombres)', "m', t', s', l', n'", "m'agrada, t'estimo, s'aixeca, l'escolto, n'hi ha"]]) +
+        P('Detrás del verbo también se apostrofan algunos pronombres: <i>compra\'l, renta\'t, dona\'m</i> (ver el tema <b>Pronoms febles</b>).') +
+        H("Cuándo «la» NO se apostrofa") +
+        E([['la <b>i</b>nfermera, la <b>u</b>niversitat, la <b>hi</b>stòria, la <b>hu</b>mitat', 'delante de i, u, hi, hu <b>átonas</b>'], ["l'<b>i</b>lla, l'<b>u</b>ngla, l'<b>Í</b>ndia", 'pero sí si la i/u es <b>tónica</b>'],
+           ['la anormalitat, la asimetria', 'delante del prefijo negativo a-'], ['la a, la e, la essa', 'nombres de letras'], ['és la una', 'la una (hora)']]) +
+        H('No se apostrofa nunca') +
+        E([['el iogurt, la iaia, de iogurt', 'delante de i, u que suenan como consonante (semiconsonante)'], ['un home, una amiga', 'los artículos un / una no se apostrofan']]) +
+        R("<b>l'</b> sirve para masculino y femenino: <i>l'home</i> (el hombre), <i>l'amiga</i> (la amiga). El género lo sabrás por el adjetivo: <i>l'home alt, l'amiga alta</i>."),
+      q: [['«___ aigua» (el agua)', ['la aigua', "l'aigua", 'el aigua'], 1],
+          ['«___ universitat»', ["l'universitat", 'la universitat'], 1],
+          ['«Un got ___ llet» (un vaso de leche)', ["d'llet", 'de llet'], 1]] },
+
+    { id: 'contraccions', g: 'orto', t: 'Les contraccions', es: 'Las contracciones', k: 'contraccio al del pel als dels pels cal can a el de el per el',
+      b: P('Como en castellano (<i>a + el = al</i>), algunas preposiciones se unen al artículo masculino <b>el / els</b>. En catalán hay más:') +
+        T(['', '+ el', '+ els'], [['<b>a</b>', 'al', 'als'], ['<b>de</b>', 'del', 'dels'], ['<b>per</b>', 'pel', 'pels'], ['<b>ca</b> (casa de)', 'cal', 'cals']]) +
+        E([['Vaig <b>al</b> mercat.', 'Voy al mercado.'], ['El llibre <b>dels</b> nens.', 'El libro de los niños.'], ['Passo <b>pel</b> parc.', 'Paso por el parque.'],
+           ['Sopem a <b>cal</b> Joan.', 'Cenamos en casa de Joan.'], ['Parlo <b>als</b> alumnes.', 'Hablo a los alumnos.']]) +
+        W("<b>No</b> hay contracción con <b>la, les</b> ni con <b>l'</b>: <i>a la platja, de les noies, a l'escola, de l'home, per l'Anna</i>.") +
+        R('con el artículo personal: <i>ca + en = can</i> → <i>Anem a can Pere</i> (vamos a casa de Pere).'),
+      q: [['«Vinc ___ cinema» (vengo del cine)', ['de el', 'del'], 1],
+          ['«Passem ___ carrer» (pasamos por la calle)', ['per el', 'pel'], 1],
+          ['«Vaig ___ escola»', ['al escola', "a l'escola"], 1]] },
+
+    { id: 'ela', g: 'orto', t: 'La ela geminada (l·l)', es: 'La ele geminada', k: 'l·l ela geminada punt volat col·legi intel·ligent',
+      b: P('La <b>l·l</b> (ela geminada) se escribe con un <b>punto volado</b> (·) entre las dos eles. Suena como una <b>l larga</b> (l + l), no como la <b>ll</b>.') +
+        E([['col·legi', 'colegio'], ['intel·ligent', 'inteligente'], ['il·lusió', 'ilusión'], ['pel·lícula', 'película'], ['tranquil·la', 'tranquila'],
+           ['novel·la', 'novela'], ['al·lèrgia', 'alergia'], ['col·lecció', 'colección']]) +
+        R('casi siempre aparece en palabras cultas que en castellano tienen <b>una sola l</b>: <i>ilusión → il·lusió</i>. Pero no siempre: <i>pala → pala, escola → escola</i>.') +
+        W('No confundas: <i>cel·la</i> (celda) / <i>cella</i> (ceja). Para escribir el punto volado: <b>Mayús + 3</b> en el teclado español; en el móvil, mantén pulsada la <b>l</b> (teclado en catalán).'),
+      q: [['¿Cómo se escribe «película»?', ['pelicula', 'pel·lícula', 'pellícula'], 1],
+          ['¿Cómo se escribe «ilusión»?', ['il·lusió', 'ilusió', 'illusió'], 0],
+          ['La l·l suena…', ['como ll (llibre)', 'como una l larga'], 1]] },
+
+    { id: 'guionet', g: 'orto', t: 'Guionet i majúscules', es: 'El guion y las mayúsculas', k: 'guionet guio numeros vint-i-un majuscules minuscules dies mesos',
+      b: H('El guionet (-)') +
+        T(['Quan', 'Exemples'], [
+            ['Números: entre decenas y unidades, y en los cientos', 'vint-<b>i</b>-u, trenta-dos, quaranta-cinc, dos-cents, tres-centes'],
+            ['Pronombres detrás del verbo', 'rentar-se, menjar-lo, dona-m\'ho, digues-li'],
+            ['Algunas palabras compuestas', 'nord-americà, sud-est, pèl-roig']]) +
+        E([['21 → vint-i-u / vint-i-un', 'la «i» entre guiones solo del 21 al 29'], ['35 → trenta-cinc', ''], ['123 → cent vint-i-tres', '«cent» va sin guion'], ['200 → dos-cents (dues-centes)', '']]) +
+        H('Majúscules i minúscules') +
+        P('Igual que en castellano, se escriben con <b>minúscula</b>:') +
+        E([['dilluns, dimarts, dimecres…', 'los días de la semana'], ['gener, febrer, març…', 'los meses'], ['primavera, estiu, tardor, hivern', 'las estaciones'], ['català, anglès, francès', 'idiomas y nacionalidades']]),
+      q: [['¿Cómo se escribe 24?', ['vint i quatre', 'vint-i-quatre', 'vintiquatre'], 1],
+          ['«Vull ___» (quiero lavarme)', ['rentarme', 'rentar-me', "rentar'm"], 1],
+          ['¿Cómo se escribe el mes?', ['Gener', 'gener'], 1]] },
+
+    // ---------------- NOMS ----------------
+    { id: 'articles', g: 'nom', t: 'Els articles', es: 'Los artículos', k: 'article el la els les un una uns unes en na personal',
+      b: T(['', 'Masculí', 'Femení'], [
+            ['Determinat singular', "el / l'", "la / l'"], ['Determinat plural', 'els', 'les'],
+            ['Indeterminat singular', 'un', 'una'], ['Indeterminat plural', 'uns', 'unes']]) +
+        E([['el gat, els gats', 'el gato, los gatos'], ['la casa, les cases', 'la casa, las casas'], ["l'home, l'escola", 'el hombre, la escuela'], ['uns amics, unes amigues', 'unos amigos, unas amigas']]) +
+        H("L'article personal (davant de noms de persona)") +
+        P('En catalán es normal poner artículo delante de los nombres de persona:') +
+        E([['<b>en</b> Joan, <b>el</b> Pau', 'masculino'], ['<b>la</b> Maria, <b>na</b> Maria (Baleares)', 'femenino'], ["<b>l'</b>Anna, <b>l'</b>Andreu", 'delante de vocal']]) +
+        W('En catalán <b>no existe el «lo» neutro</b> del castellano: <i>lo bueno → el que és bo / allò bo</i>; <i>lo más importante → el més important</i>.'),
+      q: [['«___ Joan és el meu germà»', ['El / En', 'Lo'], 0],
+          ['El plural de «la casa» es…', ['las cases', 'les cases', 'les casas'], 1],
+          ['«Lo mejor» se dice…', ['lo millor', 'el millor'], 1]] },
+
+    { id: 'genere', g: 'nom', t: 'El gènere dels noms', es: 'El género de los nombres', k: 'genere masculi femeni dent llet costum olor senyal diferents',
+      b: P('Normalmente el femenino se forma añadiendo <b>-a</b> al masculino:') +
+        E([['el noi → la noia', 'el chico → la chica'], ['el gat → la gata', ''], ['el nen → la nena', ''], ['el germà → la germana', 'en las agudas acabadas en vocal vuelve la -n']]) +
+        P('Otras formas: <i>el pare / la mare, l\'home / la dona, el rei / la reina, el gall / la gallina, el metge / la metgessa</i>.') +
+        H('¡Cuidado! Palabras con género diferente al castellano') +
+        T(['Català', 'Castellà'], [
+            ['<b>la</b> dent', '<b>el</b> diente'], ['<b>la</b> calor', '<b>el</b> calor'], ["<b>l'</b>olor (fem.)", '<b>el</b> olor'], ['<b>la</b> suor', '<b>el</b> sudor'],
+            ['<b>les</b> postres', '<b>el</b> postre'], ['<b>la</b> resta', '<b>el</b> resto'], ['<b>el</b> costum', '<b>la</b> costumbre'], ['<b>el</b> dubte', '<b>la</b> duda'],
+            ['<b>el</b> senyal', '<b>la</b> señal'], ['<b>el</b> front', '<b>la</b> frente'], ['<b>el</b> llegum', '<b>la</b> legumbre'], ['<b>el</b> corrent', '<b>la</b> corriente']]) +
+        R('cuando dudes, consulta el diccionario: el DIEC (diccionari de l\'IEC) indica <i>m.</i> (masculí) o <i>f.</i> (femení).'),
+      q: [['¿Cómo se dice «el diente»?', ['el dent', 'la dent'], 1],
+          ['¿Cómo se dice «la costumbre»?', ['la costum', 'el costum'], 1],
+          ['¿Cómo se dice «el postre»?', ['el postre', 'les postres'], 1]] },
+
+    { id: 'plural', g: 'nom', t: 'El plural', es: 'El plural', k: 'plural s es os ns gossos peixos cases cami camins',
+      b: T(['Regla', 'Exemples'], [
+            ['General: <b>+ s</b>', 'gat → gats, llibre → llibres, cotxe → cotxes'],
+            ['Femeninos en <b>-a → -es</b>', 'casa → cases, taula → taules, noia → noies'],
+            ['Agudas acabadas en vocal (muchas): <b>+ ns</b>', 'camí → camins, germà → germans, cançó → cançons, pa → pans, vi → vins'],
+            ['Masculinos en <b>-s, -ç, -x, -ix, -tx</b> (agudas): <b>+ os</b>', 'gos → gossos, braç → braços, peix → peixos, mes → mesos, francès → francesos'],
+            ['Acabados en <b>-sc, -st, -xt</b>: <b>+ s</b> o <b>+ os</b>', 'disc → discs / discos, gust → gusts / gustos, text → texts / textos']]) +
+        H('Cambios de ortografía en -a → -es') +
+        P('Al cambiar la a por e, hay que mantener el mismo sonido:') +
+        E([['vaca → va<b>qu</b>es', 'ca → ques'], ['amiga → ami<b>gu</b>es', 'ga → gues'], ['plaça → pla<b>c</b>es', 'ça → ces'], ['platja → plat<b>g</b>es', 'ja → ges'], ['llengua → llen<b>gü</b>es', 'gua → gües']]) +
+        R('algunas palabras no cambian: <i>el llapis → els llapis</i>, <i>el dilluns → els dilluns</i> (planas acabadas en -s).'),
+      q: [['El plural de «amiga» es…', ['amigas', 'amiges', 'amigues'], 2],
+          ['El plural de «camí» es…', ['camís', 'camins', 'camies'], 1],
+          ['El plural de «peix» es…', ['peixs', 'peixos', 'peixes'], 1]] },
+
+    { id: 'adjectius', g: 'nom', t: 'Adjectius i adverbis en -ment', es: 'Adjetivos y adverbios en -mente', k: 'adjectiu femeni invariable ment adverbi rapidament',
+      b: P('El adjetivo concuerda con el nombre en género y número:') +
+        T(['Masculí sg.', 'Femení sg.', 'Masculí pl.', 'Femení pl.'], [
+            ['petit', 'petita', 'petits', 'petites'], ['blanc', 'blan<b>c</b>a', 'blancs', 'blan<b>qu</b>es'], ['groc', 'gro<b>g</b>a', 'grocs', 'gro<b>gu</b>es'],
+            ['nou', 'no<b>v</b>a', 'nous', 'noves'], ['boig', 'bo<b>j</b>a', 'bojos', 'boges'], ['català', 'catala<b>n</b>a', 'catalans', 'catalanes']]) +
+        P('Algunos adjetivos son <b>invariables</b> en género (iguales en masculino y femenino): <i>feliç, jove, gran, alegre, fàcil, verd</i>… Solo cambian en plural: <i>felices, joves, grans</i>.') +
+        H('Adverbis en -ment') +
+        P('Se forman con el <b>femenino</b> del adjetivo + <b>-ment</b> (= -mente):') +
+        E([['ràpid → ràpida<b>ment</b>', 'rápidamente'], ['lent → lenta<b>ment</b>', 'lentamente'], ['fàcil → fàcil<b>ment</b>', 'fácilmente'], ['feliç → feliç<b>ment</b>', 'felizmente']]),
+      q: [['El femenino de «blanc» es…', ['blanca', 'blanqua', 'blanka'], 0],
+          ['El femenino de «nou» es…', ['noua', 'nova', 'nou'], 1],
+          ['«Rápidamente» se dice…', ['ràpidment', 'ràpidament', 'rapidamente'], 1]] },
+
+    { id: 'possessius', g: 'nom', t: 'Els possessius', es: 'Los posesivos', k: 'possessiu meu meva teu teva seu seva nostre vostre llur mon ma',
+      b: T(['Persona', 'Masc. sg.', 'Fem. sg.', 'Masc. pl.', 'Fem. pl.'], [
+            ['jo', 'el meu', 'la meva (mia)', 'els meus', 'les meves (mies)'],
+            ['tu', 'el teu', 'la teva (tua)', 'els teus', 'les teves (tues)'],
+            ['ell / ella / vostè', 'el seu', 'la seva (seua)', 'els seus', 'les seves (seues)'],
+            ['nosaltres', 'el nostre', 'la nostra', 'els nostres', 'les nostres'],
+            ['vosaltres', 'el vostre', 'la vostra', 'els vostres', 'les vostres'],
+            ['ells / elles / vostès', 'el seu (llur)', 'la seva (llur)', 'els seus (llurs)', 'les seves (llurs)']]) +
+        W('A diferencia del castellano, el posesivo va <b>con artículo</b>: <i>mi casa → <b>la</b> meva casa</i>, <i>tus amigos → <b>els</b> teus amics</i>.') +
+        E([['La meva germana es diu Laia.', 'Mi hermana se llama Laia.'], ['On és el teu cotxe?', '¿Dónde está tu coche?'], ['Una amiga meva viu a Reus.', 'Una amiga mía vive en Reus.'], ['Aquest llibre és vostre.', 'Este libro es vuestro.']]) +
+        R('con algunos nombres de familia también se usan las formas cortas sin artículo: <i>mon pare, ma mare, sa germana</i> (más tradicional).'),
+      q: [['«Mi casa» se dice…', ['meva casa', 'la meva casa', 'la mia casa'], 1],
+          ['«Nuestros amigos» se dice…', ['els nostres amics', 'nostres amics'], 0],
+          ['«Su madre» (de él) se dice…', ['la seva mare', 'la sua mare', 'seva mare'], 0]] },
+
+    { id: 'demostratius', g: 'nom', t: 'Els demostratius', es: 'Los demostrativos', k: 'demostratiu aquest aquesta aquell aquella aixo allo aqui alla',
+      b: P('En el catalán central solo hay <b>dos grados</b> (cerca / lejos), en lugar de los tres del castellano (este / ese / aquel):') +
+        T(['', 'Masc. sg.', 'Fem. sg.', 'Masc. pl.', 'Fem. pl.', 'Neutre'], [
+            ['Prop (este / ese)', 'aquest', 'aquesta', 'aquests', 'aquestes', '<b>això</b> (esto / eso)'],
+            ['Lluny (aquel)', 'aquell', 'aquella', 'aquells', 'aquelles', '<b>allò</b> (aquello)']]) +
+        E([['Aquest noi és el meu cosí.', 'Este chico es mi primo.'], ['Aquella casa és molt gran.', 'Aquella casa es muy grande.'], ['Què és això?', '¿Qué es esto / eso?'], ['Allò no m\'agrada.', 'Aquello no me gusta.']]) +
+        H('Adverbis de lloc') +
+        E([['aquí / ací', 'aquí'], ['allà / allí', 'allí, allá']]) +
+        R('en valenciano se usa también <i>aqueix, aqueixa</i> (ese, esa) y <i>este, esta</i>.'),
+      q: [['«¿Qué es eso?»', ['Què és allò?', 'Què és això?'], 1],
+          ['«Aquellas chicas»', ['aquelles noies', 'aquellas noies', 'aquestes noies'], 0],
+          ['«Esta mesa»', ['aquesta taula', 'aquella taula'], 0]] },
+
+    { id: 'quantitatius', g: 'nom', t: 'Quantitatius i comparatius', es: 'Cuantificadores y comparativos', k: 'molt poc gaire forca bastant massa gens mes menys tan com comparatiu superlatiu issim millor pitjor',
+      b: T(['Català', 'Castellà', 'Exemple'], [
+            ['molt / molta / molts / moltes', 'mucho, muy', 'molt bonic, molta gent, molts amics'],
+            ['poc / poca / pocs / poques', 'poco', 'poca feina, pocs diners'],
+            ['força, bastant', 'bastante', 'força gent, és bastant car'],
+            ['massa', 'demasiado', 'massa soroll, massa tard'],
+            ['<b>gaire / gaires</b>', 'mucho (en negativas y preguntas)', 'No tinc gaire temps. Hi ha gaire gent?'],
+            ['<b>gens</b>', 'nada (de cantidad)', 'No tinc gens de gana.']]) +
+        H('Comparar') +
+        T(['', 'Català', 'Exemple'], [
+            ['Superioridad', 'més … que', 'La Laia és més alta que jo.'], ['Inferioridad', 'menys … que', 'Aquest cotxe és menys car que aquell.'],
+            ['Igualdad', 'tan … com / tant … com', 'Ets tan alt com el teu pare. Treballo tant com tu.']]) +
+        E([['bo → millor', 'bueno → mejor'], ['dolent → pitjor', 'malo → peor'], ['el més alt / altíssim', 'el más alto / altísimo'], ['bo → boníssim', 'buenísimo']]) +
+        W('Igualdad: <b>tan … com</b>, nunca <i>*tan … que</i>.'),
+      q: [['«No tengo mucho tiempo» →', ['No tinc molt temps', 'No tinc gaire temps'], 1],
+          ['«Eres tan alto como yo» →', ['Ets tan alt com jo', 'Ets tan alt que jo'], 0],
+          ['«No tengo nada de hambre» →', ['No tinc gens de gana', 'No tinc res de gana'], 0]] },
+
+    // ---------------- PRONOMS ----------------
+    { id: 'pronoms-forts', g: 'pron', t: 'Pronoms personals i tractament', es: 'Pronombres personales y tratamiento', k: 'jo tu ell ella vostè nosaltres vosaltres vostes ells elles tractament',
+      b: T(['Persona', 'Singular', 'Plural'], [
+            ['1a', 'jo', 'nosaltres'], ['2a', 'tu', 'vosaltres'], ['3a', 'ell, ella', 'ells, elles'], ['Cortesia', '<b>vostè</b> (usted)', '<b>vostès</b> (ustedes)']]) +
+        P('<b>Vostè</b> y <b>vostès</b> van con el verbo en 3ª persona, igual que <i>usted</i>:') +
+        E([['Vostè és de Girona?', '¿Usted es de Girona?'], ['Vostès volen cafè?', '¿Ustedes quieren café?'], ['Tu ets molt simpàtic.', 'Tú eres muy simpático.']]) +
+        P('Como en castellano, normalmente el pronombre sujeto <b>no se dice</b>: <i>(Jo) Parlo català</i>.') +
+        H('Després de preposició') +
+        P('Detrás de preposición, <b>jo</b> se convierte en <b>mi</b>; <b>tu</b> no cambia (no existe <i>*ti</i>):') +
+        E([['per a <b>mi</b>, amb <b>mi</b>, sense <b>mi</b>', 'para mí, conmigo, sin mí'], ['amb <b>tu</b>, per a <b>tu</b>', 'contigo, para ti'], ['entre tu i <b>jo</b>', 'excepción: entre tú y yo']]) +
+        W('«Conmigo / contigo» → <b>amb mi / amb tu</b>.'),
+      q: [['«Contigo» se dice…', ['contigo', 'amb tu', 'amb ti'], 1],
+          ['«¿Usted es médico?»', ['Vostè és metge?', 'Vostè ets metge?'], 0],
+          ['«Para mí» se dice…', ['per a mi', 'per a jo'], 0]] },
+
+    { id: 'pronoms-febles', g: 'pron', t: 'Pronoms febles', es: 'Pronombres átonos (me, te, se, lo…)', k: 'febles atons em et es el la ens us els li me te se lo enclitic proclitic',
+      b: P('Los <b>pronoms febles</b> equivalen a <i>me, te, se, lo, la, le, nos, os, les…</i> Su forma cambia según vayan <b>delante</b> o <b>detrás</b> del verbo, y según la letra con que empieza o acaba el verbo.') +
+        T(['', 'Davant (consonant)', 'Davant (vocal / h)', 'Darrere (consonant / u)', 'Darrere (vocal)'], [
+            ['me', 'em', "m'", '-me', "'m"], ['te', 'et', "t'", '-te', "'t"], ['se', 'es', "s'", '-se', "'s"],
+            ['nos', 'ens', 'ens', '-nos', "'ns"], ['os', 'us', 'us', '-vos', '-us'],
+            ['lo (CD)', 'el', "l'", '-lo', "'l"], ['la (CD)', 'la', "l'", '-la', '-la'], ['los (CD)', 'els', 'els', '-los', "'ls"], ['las (CD)', 'les', 'les', '-les', '-les'],
+            ['le (CI)', 'li', 'li', '-li', '-li'], ['les (CI)', 'els', 'els', '-los', "'ls"]]) +
+        E([['<b>Em</b> dic Valentí. <b>M\'</b>agrada el cafè.', 'Me llamo… Me gusta…'], ['<b>Et</b> truco demà. <b>T\'</b>estimo.', 'Te llamo mañana. Te quiero.'],
+           ['Vull rentar<b>-me</b>.', 'Quiero lavarme.'], ['Compra<b>\'l</b>!', '¡Cómpralo!'], ['<b>Li</b> dono un regal.', 'Le doy un regalo.'], ['Truca<b>\'ls</b>.', 'Llámalos.']]) +
+        H('Combinacions freqüents') +
+        E([["me'l, te'l, se'l", 'me lo, te lo, se lo'], ["se'n va", 'se va'], ["n'hi ha", 'hay (de eso)'], ['li ho dic', 'se lo digo'], ['dona-m\'ho', 'dámelo']]) +
+        R('delante del verbo se escriben separados; detrás, unidos con <b>guion</b> o <b>apóstrofo</b>: <i>et miro / mira\'t / mirar-te</i>.'),
+      q: [['«Me gusta» →', ['Em agrada', "M'agrada", 'Me agrada'], 1],
+          ['«Quiero llamarte» →', ["Vull trucar't", 'Vull trucar-te', 'Vull et trucar'], 1],
+          ['«Cómpralo» →', ["Compra'l", 'Compra-el', 'Compra-lo'], 0]] },
+
+    { id: 'en-hi-ho', g: 'pron', t: 'Els pronoms en, hi i ho', es: 'Los pronombres en, hi y ho', k: 'en hi ho pronom partitiu lloc neutre hi ha',
+      b: P('Estos tres pronombres <b>no existen en castellano</b> y son muy importantes en catalán.') +
+        H('HO = «lo» neutro (eso, esto)') +
+        E([['No <b>ho</b> sé.', 'No lo sé.'], ['<b>Ho</b> entens?', '¿Lo entiendes?'], ['Digue-m\'<b>ho</b>.', 'Dímelo.']]) +
+        W('«Lo sé» es <b>ho sé</b>, no <i>*el sé</i>.') +
+        H('EN = «de eso», cantidad') +
+        P('Sustituye algo introducido por <b>de</b> o una cantidad (sin artículo):') +
+        E([['Tens pa? Sí, <b>en</b> tinc.', '¿Tienes pan? Sí, tengo.'], ['Quants germans tens? <b>En</b> tinc dos.', 'Tengo dos.'], ['Vens de Madrid? Sí, <b>en</b> vinc.', 'Sí, vengo de allí.'], ['Me\'<b>n</b> vaig.', 'Me voy.']]) +
+        H('HI = «allí», lugar y otros complementos') +
+        E([['Vas a Girona? Sí, <b>hi</b> vaig demà.', 'Sí, voy mañana.'], ['Penses en ella? Sí, <b>hi</b> penso.', 'Sí, pienso en ella.'], ['<b>Hi</b> ha un gat.', 'Hay un gato.']]) +
+        R('forma de <b>en</b>: <i>en</i> (delante de consonante), <i>n\'</i> (delante de vocal), <i>-ne</i> y <i>\'n</i> (detrás del verbo): <i>n\'hi ha, menja\'n, menjar-ne</i>.'),
+      q: [['«No lo sé» →', ['No el sé', 'No ho sé', 'No lo sé'], 1],
+          ['«¿Tienes hermanos? Sí, tengo tres» →', ['Sí, tinc tres', 'Sí, en tinc tres', 'Sí, hi tinc tres'], 1],
+          ['«¿Vas a la playa? Sí, voy» →', ['Sí, hi vaig', 'Sí, en vaig', 'Sí, ho vaig'], 0]] },
+
+    { id: 'relatius', g: 'pron', t: 'Els relatius', es: 'Los relativos (que, on, qui…)', k: 'relatiu que on qui que el qual la qual',
+      b: T(['Relatiu', 'Ús', 'Exemple'], [
+            ['<b>que</b>', 'el más común, sin preposición', 'El llibre <b>que</b> llegeixo és bo.'],
+            ['<b>on</b>', 'lugar (= donde, en el que)', 'La ciutat <b>on</b> visc és petita.'],
+            ['<b>qui</b>', 'personas, detrás de preposición', 'La noia <b>amb qui</b> parlo és la Laia.'],
+            ['<b>què</b>', 'cosas, detrás de preposición', 'El tema <b>de què</b> parlem.'],
+            ['<b>el qual, la qual, els quals, les quals</b>', 'detrás de preposición (personas y cosas)', 'L\'amic <b>amb el qual</b> treballo.']]) +
+        E([['L\'home que viu aquí.', 'El hombre que vive aquí.'], ['El restaurant on vam sopar.', 'El restaurante donde cenamos.'], ['El noi a qui vaig donar el llibre.', 'El chico al que di el libro.']]) +
+        W('Sin preposición se usa <b>que</b>, no <i>*el que</i>: <i>El cotxe que vull</i> (no <i>*el cotxe el que vull</i>).'),
+      q: [['«La casa donde vivo» →', ['La casa on visc', 'La casa que visc'], 0],
+          ['«La persona con quien hablo» →', ['La persona amb qui parlo', 'La persona amb què parlo'], 0],
+          ['«El libro que leo» →', ['El llibre que llegeixo', 'El llibre el que llegeixo'], 0]] },
+
+    // ---------------- VERBS ----------------
+    { id: 'present', g: 'verb', t: "El present d'indicatiu", es: 'El presente de indicativo', k: 'present conjugacio cantar perdre dormir servir incoatiu eix regular irregular',
+      b: P('Hay <b>tres conjugaciones</b>: 1ª <b>-ar</b> (cantar), 2ª <b>-re / -er</b> (perdre, témer), 3ª <b>-ir</b> (dormir, servir).') +
+        T(['', 'cantar', 'perdre', 'dormir', 'servir (incoatiu)'], [
+            ['jo', 'cant<b>o</b>', 'perd<b>o</b>', 'dorm<b>o</b>', 'serv<b>eixo</b>'], ['tu', 'cant<b>es</b>', 'perd<b>s</b>', 'dorm<b>s</b>', 'serv<b>eixes</b>'],
+            ['ell/ella', 'cant<b>a</b>', 'perd', 'dorm', 'serv<b>eix</b>'], ['nosaltres', 'cant<b>em</b>', 'perd<b>em</b>', 'dorm<b>im</b>', 'serv<b>im</b>'],
+            ['vosaltres', 'cant<b>eu</b>', 'perd<b>eu</b>', 'dorm<b>iu</b>', 'serv<b>iu</b>'], ['ells/elles', 'cant<b>en</b>', 'perd<b>en</b>', 'dorm<b>en</b>', 'serv<b>eixen</b>']]) +
+        P('La mayoría de verbos en -ir son <b>incoatius</b> (añaden <b>-eix-</b>): <i>servir, llegir, preferir, patir, decidir</i>… Los más comunes sin -eix-: <i>dormir, sortir, obrir, sentir, morir, collir, cosir, tossir, fugir, bullir</i>.') +
+        H('Verbs irregulars molt freqüents') +
+        T(['', 'ser', 'estar', 'tenir', 'anar', 'fer', 'voler', 'poder'], [
+            ['jo', 'soc', 'estic', 'tinc', 'vaig', 'faig', 'vull', 'puc'], ['tu', 'ets', 'estàs', 'tens', 'vas', 'fas', 'vols', 'pots'],
+            ['ell', 'és', 'està', 'té', 'va', 'fa', 'vol', 'pot'], ['nos.', 'som', 'estem', 'tenim', 'anem', 'fem', 'volem', 'podem'],
+            ['vos.', 'sou', 'esteu', 'teniu', 'aneu', 'feu', 'voleu', 'podeu'], ['ells', 'són', 'estan', 'tenen', 'van', 'fan', 'volen', 'poden']]) +
+        R('la 1ª persona en -o es del catalán central. En valenciano: <i>cante, perd</i>; en Baleares: <i>cant</i>. Todas son correctas.'),
+      q: [['«Yo leo» (llegir) →', ['llego', 'llegeixo', 'llegixo'], 1],
+          ['«Yo tengo» →', ['tinc', 'tengo', 'tenu'], 0],
+          ['«Nosotros vamos» →', ['vam', 'anem', 'vamos'], 1]] },
+
+    { id: 'ser-estar', g: 'verb', t: 'Ser i estar', es: 'Ser y estar', k: 'ser estar ubicacio lloc estat on es',
+      b: P('En general se usan como en castellano, pero con una diferencia importante: para decir <b>dónde está</b> algo o alguien, en catalán se usa mucho <b>ser</b>.') +
+        T(['Ús', 'Verb', 'Exemple'], [
+            ['Característica, identidad, profesión, origen', '<b>ser</b>', 'Soc de Viladecans. És metge. La casa és gran.'],
+            ['Localización (dónde está)', '<b>ser</b> (también estar)', 'On <b>és</b> el lavabo? <b>Som</b> a la platja.'],
+            ['Estado temporal', '<b>estar</b>', 'Estic cansat. La sopa està freda.'],
+            ['Quedarse un tiempo, permanecer', '<b>estar</b>', 'He estat tres dies a Roma. Estic a casa tot el dia.'],
+            ['Acción en curso', '<b>estar</b> + gerundi', 'Estic menjant.']]) +
+        E([['On ets?', '¿Dónde estás?'], ['Soc a la feina.', 'Estoy en el trabajo.'], ['El meu germà està malalt.', 'Mi hermano está enfermo.'], ['És tard!', '¡Es tarde!']]) +
+        R('desde 2016 <b>soc</b> (yo soy) se escribe sin acento.'),
+      q: [['«¿Dónde estás?» (lo más natural) →', ['On ets?', 'On estàs?'], 0],
+          ['«Estoy cansado» →', ['Soc cansat', 'Estic cansat'], 1],
+          ['«Yo soy» se escribe…', ['sóc', 'soc'], 1]] },
+
+    { id: 'haver-hi', g: 'verb', t: 'Haver-hi (hi ha)', es: 'Haber (hay)', k: 'hi ha hi havia hi haura haver-hi hay existir',
+      b: P('Para decir <b>hay</b> se usa <b>hi ha</b>. Siempre lleva el pronombre <b>hi</b>.') +
+        T(['Temps', 'Català', 'Castellà'], [
+            ['Present', 'hi ha', 'hay'], ['Passat', 'hi va haver / hi ha hagut', 'hubo / ha habido'], ['Imperfet', 'hi havia', 'había'],
+            ['Futur', 'hi haurà', 'habrá'], ['Condicional', 'hi hauria', 'habría']]) +
+        E([['<b>Hi ha</b> un gat al jardí.', 'Hay un gato en el jardín.'], ['<b>Hi ha</b> molts cotxes.', 'Hay muchos coches.'], ['Ahir <b>hi havia</b> molta gent.', 'Ayer había mucha gente.'], ['<b>N\'hi ha</b> tres.', 'Hay tres (de eso).']]) +
+        W('Igual que en castellano (<i>*habían muchos</i>), en el registro formal se mantiene en <b>singular</b>: <i>hi ha tres cotxes</i>, <i>hi havia molts nens</i>. Evita <i>*hi han</i>.') +
+        R('«Hay que» se dice <b>cal</b> o <b>s\'ha de</b>: <i>Cal estudiar</i> (Hay que estudiar).'),
+      q: [['«Hay muchos niños» →', ['Hi han molts nens', 'Hi ha molts nens', 'Ha molts nens'], 1],
+          ['«Había un perro» →', ['Hi havia un gos', 'Havia un gos'], 0],
+          ['«Hay que comer» →', ['Hi ha que menjar', 'Cal menjar'], 1]] },
+
+    { id: 'passat', g: 'verb', t: 'Els temps del passat', es: 'Los tiempos del pasado', k: 'passat perifrastic vaig anar perfet he cantat imperfet cantava preterit',
+      b: H('1. Passat perifràstic: vaig + infinitiu (= pretérito indefinido)') +
+        P('Es el pasado más usado para acciones terminadas (<i>ayer, el año pasado…</i>). Se forma con el verbo <b>anar</b> + infinitivo. <b>¡No significa futuro!</b>') +
+        T(['Persona', 'Auxiliar', 'Exemple', 'Castellà'], [
+            ['jo', 'vaig', 'vaig cantar', 'canté'], ['tu', 'vas', 'vas cantar', 'cantaste'], ['ell/ella', 'va', 'va cantar', 'cantó'],
+            ['nosaltres', 'vam (vàrem)', 'vam cantar', 'cantamos'], ['vosaltres', 'vau (vàreu)', 'vau cantar', 'cantasteis'], ['ells/elles', 'van (varen)', 'van cantar', 'cantaron']]) +
+        E([['Ahir <b>vaig anar</b> al cine.', 'Ayer fui al cine.'], ['L\'estiu passat <b>vam viatjar</b> a Itàlia.', 'El verano pasado viajamos a Italia.']]) +
+        H('2. Perfet: he + participi (= pretérito perfecto)') +
+        P('Para acciones de <b>hoy</b>, esta semana, este año o experiencias: <i>he, has, ha, hem, heu, han</i> + participio.') +
+        E([['Avui <b>he treballat</b> molt.', 'Hoy he trabajado mucho.'], ['Has estat mai a Londres?', '¿Has estado alguna vez en Londres?']]) +
+        H('3. Imperfet (= pretérito imperfecto)') +
+        T(['', 'cantar', 'perdre', 'dormir'], [
+            ['jo', 'cantava', 'perdia', 'dormia'], ['tu', 'cantaves', 'perdies', 'dormies'], ['ell', 'cantava', 'perdia', 'dormia'],
+            ['nos.', 'cantàvem', 'perdíem', 'dormíem'], ['vos.', 'cantàveu', 'perdíeu', 'dormíeu'], ['ells', 'cantaven', 'perdien', 'dormien']]) +
+        E([['Quan era petit, <b>jugava</b> al carrer.', 'Cuando era pequeño, jugaba en la calle.'], ['Irregulars: <b>era</b> (ser), <b>feia</b> (fer), <b>deia</b> (dir), <b>veia</b> (veure)', '']]) +
+        W('<b>Vaig anar</b> = fui (pasado). <b>Vaig a anar</b> no existe en catalán formal; para el futuro usa <b>aniré</b>.'),
+      q: [['«Ayer comí paella» →', ['Ahir menjo paella', 'Ahir vaig menjar paella', 'Ahir vaig a menjar paella'], 1],
+          ['«Hoy he trabajado» →', ['Avui he treballat', 'Avui vaig treballar'], 0],
+          ['«Nosotros jugábamos» →', ['jugàvem', 'jugavam', 'vam jugar'], 0]] },
+
+    { id: 'futur', g: 'verb', t: 'Futur i condicional', es: 'Futuro y condicional', k: 'futur condicional cantare cantaria anire fare tindre',
+      b: P('Se forman como en castellano: <b>infinitivo + terminación</b>.') +
+        T(['', 'Futur', 'Castellà', 'Condicional', 'Castellà'], [
+            ['jo', 'cantar<b>é</b>', 'cantaré', 'cantar<b>ia</b>', 'cantaría'], ['tu', 'cantar<b>às</b>', 'cantarás', 'cantar<b>ies</b>', 'cantarías'],
+            ['ell', 'cantar<b>à</b>', 'cantará', 'cantar<b>ia</b>', 'cantaría'], ['nos.', 'cantar<b>em</b>', 'cantaremos', 'cantar<b>íem</b>', 'cantaríamos'],
+            ['vos.', 'cantar<b>eu</b>', 'cantaréis', 'cantar<b>íeu</b>', 'cantaríais'], ['ells', 'cantar<b>an</b>', 'cantarán', 'cantar<b>ien</b>', 'cantarían']]) +
+        H('Irregulars') +
+        T(['Infinitiu', 'Futur (jo)', 'Condicional (jo)'], [
+            ['anar', 'aniré', 'aniria'], ['fer', 'faré', 'faria'], ['tenir', 'tindré', 'tindria'], ['venir', 'vindré', 'vindria'],
+            ['voler', 'voldré', 'voldria'], ['poder', 'podré', 'podria'], ['saber', 'sabré', 'sabria'], ['ser', 'seré', 'seria'], ['veure', 'veuré', 'veuria']]) +
+        E([['Demà <b>aniré</b> a Barcelona.', 'Mañana iré a Barcelona.'], ['<b>Voldria</b> un cafè, si us plau.', 'Querría un café, por favor.'], ['Què <b>faràs</b> aquest estiu?', '¿Qué harás este verano?']]) +
+        R('perdre → perdré (pierde la e), batre → batré, viure → viuré.'),
+      q: [['«Mañana iré» →', ['Demà aniré', 'Demà vaig anar', 'Demà iré'], 0],
+          ['«Yo tendré» →', ['teniré', 'tindré'], 1],
+          ['«Querría un café» →', ['Voldria un cafè', 'Volria un cafè'], 0]] },
+
+    { id: 'imperatiu', g: 'verb', t: "L'imperatiu", es: 'El imperativo', k: 'imperatiu ordre mana canta canteu vine digues fes ves',
+      b: T(['', 'cantar', 'perdre', 'dormir', 'servir'], [
+            ['tu', 'canta', 'perd', 'dorm', 'serveix'], ['vostè', 'canti', 'perdi', 'dormi', 'serveixi'], ['nosaltres', 'cantem', 'perdem', 'dormim', 'servim'],
+            ['vosaltres', 'canteu', 'perdeu', 'dormiu', 'serviu'], ['vostès', 'cantin', 'perdin', 'dormin', 'serveixin']]) +
+        H('Irregulars (tu / vosaltres)') +
+        E([['anar → <b>ves</b> / aneu', 've / id'], ['fer → <b>fes</b> / feu', 'haz / haced'], ['dir → <b>digues</b> / digueu', 'di / decid'], ['venir → <b>vine</b> / veniu', 'ven / venid'],
+           ['tenir → <b>tingues</b> / tingueu', 'ten / tened'], ['ser → <b>sigues</b> / sigueu', 'sé / sed'], ['sortir → <b>surt</b> / sortiu', 'sal / salid']]) +
+        H('Imperatiu negatiu') +
+        P('La forma negativa usa el <b>subjuntivo</b>, como en castellano:') +
+        E([['No <b>cantis</b>!', '¡No cantes!'], ['No <b>vinguis</b> tard.', 'No vengas tarde.'], ['No ho <b>facis</b>.', 'No lo hagas.']]) +
+        R('con pronombres: <i>Digue-m\'ho</i> (dímelo), <i>Seu-te</i> (siéntate), <i>Ves-hi</i> (ve allí). En negativo van delante: <i>No m\'ho diguis</i>.'),
+      q: [['«¡Ven aquí!» →', ['Ven aquí!', 'Vine aquí!'], 1],
+          ['«¡No lo hagas!» →', ['No ho facis!', 'No ho fes!'], 0],
+          ['«Dímelo» →', ["Digue-m'ho", "Di-m'ho"], 0]] },
+
+    { id: 'perifrasis', g: 'verb', t: 'Perífrasis verbals', es: 'Perífrasis verbales', k: 'haver de tenir que obligacio acabar de tornar a anar a estar gerundi soler caldre',
+      b: T(['Català', 'Significat', 'Exemple'], [
+            ['<b>haver de</b> + inf.', 'tener que (obligación)', '<b>He de</b> treballar. (Tengo que trabajar.)'],
+            ['<b>caldre</b> + inf.', 'hay que', '<b>Cal</b> estudiar.'],
+            ['<b>acabar de</b> + inf.', 'acabar de', '<b>Acabo d\'</b>arribar.'],
+            ['<b>tornar a</b> + inf.', 'volver a', '<b>Torna a</b> ploure.'],
+            ['<b>estar</b> + gerundi', 'estar + -ando', '<b>Estic</b> llegint.'],
+            ['<b>soler</b> + inf.', 'soler', '<b>Solc</b> sopar a les nou.'],
+            ['<b>deure</b> + inf.', 'deber de (probabilidad)', '<b>Deu ser</b> tard.'],
+            ['<b>començar a</b> + inf.', 'empezar a', '<b>Comença a</b> fer fred.']]) +
+        W('<b>«Tenir que»</b> es un castellanismo: <i>*Tinc que anar</i> → <b>He d\'anar</b>.') +
+        W('<b>«Anar a» + infinitivo</b> para el futuro no es propio del catalán formal: <i>*Vaig a sopar</i> → <b>Soparé</b> / <b>Ara sopo</b>.') +
+        R('conjugación de <b>haver de</b>: he de, has de, ha de, hem de, heu de, han de.'),
+      q: [['«Tengo que irme» →', ['Tinc que marxar', "He de marxar"], 1],
+          ['«Vuelve a llover» →', ['Torna a ploure', 'Torna de ploure'], 0],
+          ['«Acabo de llegar» →', ["Acabo d'arribar", 'Acabo a arribar'], 0]] },
+
+    { id: 'gerundi-participi', g: 'verb', t: 'Gerundi i participi', es: 'Gerundio y participio', k: 'gerundi participi cantant cantat fet dit vist escrit pres',
+      b: T(['', '1a (-ar)', '2a (-re/-er)', '3a (-ir)'], [
+            ['Gerundi', 'cant<b>ant</b>', 'perd<b>ent</b>', 'dorm<b>int</b>'],
+            ['Participi', 'cant<b>at</b> / cantada', 'perd<b>ut</b> / perduda', 'dorm<b>it</b> / dormida']]) +
+        H('Participis irregulars freqüents') +
+        T(['Infinitiu', 'Participi', 'Infinitiu', 'Participi'], [
+            ['fer', 'fet', 'veure', 'vist'], ['dir', 'dit', 'prendre', 'pres'], ['escriure', 'escrit', 'tenir', 'tingut'],
+            ['ser / estar', 'estat', 'venir', 'vingut'], ['obrir', 'obert', 'voler', 'volgut'], ['morir', 'mort', 'poder', 'pogut'], ['beure', 'begut', 'saber', 'sabut']]) +
+        E([['He <b>fet</b> els deures.', 'He hecho los deberes.'], ['Estic <b>menjant</b>.', 'Estoy comiendo.'], ['La porta està <b>oberta</b>.', 'La puerta está abierta.']]) +
+        R('con los pronombres <i>la, les</i> el participio suele concordar: <i>La Marta? L\'he <b>vista</b></i> (la he visto).'),
+      q: [['Participio de «fer» →', ['fet', 'fat', 'fert'], 0],
+          ['Gerundio de «dormir» →', ['dormint', 'dormiendo', 'dorment'], 0],
+          ['Participio de «veure» →', ['veut', 'vist', 'veist'], 1]] },
+
+    // ---------------- LA FRASE ----------------
+    { id: 'preposicions', g: 'frase', t: 'Les preposicions', es: 'Las preposiciones', k: 'preposicio a en amb de per per a des de fins cap a lloc temps',
+      b: H('A / EN / AMB') +
+        T(['', 'Ús', 'Exemple'], [
+            ['<b>a</b>', 'lugar (en / a) delante de nombres, artículo el/la…', 'Visc <b>a</b> Viladecans. Vaig <b>a</b> l\'escola. Soc <b>a</b> casa.'],
+            ['<b>en</b>', 'lugar delante de un, algun, aquest, aquell… / tiempo que se tarda', '<b>En</b> un poble petit. Ho faig <b>en</b> dues hores.'],
+            ['<b>amb</b>', 'con (compañía, instrumento)', 'Vaig <b>amb</b> la meva germana. Escric <b>amb</b> bolígraf.']]) +
+        W('<b>«Con»</b> es <b>amb</b>, nunca <i>*con</i>. Y «en casa» es <b>a casa</b>.') +
+        H('PER / PER A') +
+        E([['<b>per a</b> + persona / destino', 'Un regal <b>per a</b> tu. (para ti)'], ['<b>per</b> + causa, lugar de paso, medio', 'Gràcies <b>per</b> tot. Passo <b>per</b> la plaça.'], ['<b>per</b> + infinitivo (finalidad)', 'Estudio <b>per</b> aprendre.']]) +
+        H('Altres preposicions') +
+        T(['Català', 'Castellà'], [
+            ['des de', 'desde'], ['fins a / fins', 'hasta'], ['cap a', 'hacia'], ['sobre / damunt de', 'sobre, encima de'], ['sota', 'debajo de'],
+            ['davant de', 'delante de'], ['darrere de', 'detrás de'], ['al costat de', 'al lado de'], ['entre', 'entre'], ['sense', 'sin']]) +
+        H('El temps') +
+        E([['<b>a</b> les tres, <b>al</b> matí, <b>a</b> l\'estiu', 'a las tres, por la mañana, en verano'], ['<b>Dilluns</b> vaig al metge.', 'El lunes voy al médico (sin preposición)'], ['<b>El</b> 2025, <b>al</b> desembre', 'en 2025, en diciembre']]),
+      q: [['«Vivo en Barcelona» →', ['Visc en Barcelona', 'Visc a Barcelona'], 1],
+          ['«Con mi hermano» →', ['amb el meu germà', 'con el meu germà'], 0],
+          ['«Un regalo para ti» →', ['Un regal per tu', 'Un regal per a tu'], 1]] },
+
+    { id: 'negacio', g: 'frase', t: 'La negació', es: 'La negación', k: 'negacio no pas cap res ningu mai gens enlloc tampoc',
+      b: T(['Català', 'Castellà', 'Exemple'], [
+            ['no', 'no', '<b>No</b> parlo anglès.'], ['no … <b>pas</b>', 'no (refuerzo)', 'No és <b>pas</b> veritat. (¡No es verdad!)'],
+            ['no … <b>cap</b>', 'ningún, ninguna', 'No tinc <b>cap</b> germà.'], ['no … <b>res</b>', 'nada', 'No vull <b>res</b>.'],
+            ['no … <b>ningú</b>', 'nadie', 'No hi ha <b>ningú</b>.'], ['no … <b>mai</b>', 'nunca', 'No hi he estat <b>mai</b>.'],
+            ['no … <b>gens</b>', 'nada (cantidad)', 'No m\'agrada <b>gens</b>.'], ['no … <b>enlloc</b>', 'en ningún sitio', 'No el trobo <b>enlloc</b>.'],
+            ['<b>tampoc</b>', 'tampoco', 'Jo <b>tampoc</b>.']]) +
+        H('¡Truco importante! En preguntas significan lo contrario') +
+        P('En preguntas (y frases con <i>si</i>) estas palabras tienen sentido <b>positivo</b>:') +
+        E([['Has estat <b>mai</b> a París?', '¿Has estado <b>alguna vez</b> en París?'], ['Vols <b>res</b> més?', '¿Quieres <b>algo</b> más?'], ['Hi ha <b>ningú</b>?', '¿Hay <b>alguien</b>?'], ['Tens <b>cap</b> pregunta?', '¿Tienes <b>alguna</b> pregunta?']]) +
+        R('detrás del verbo hay que poner <b>no</b> delante: <i>No ve ningú</i>. Si va delante, el «no» es opcional: <i>Ningú (no) ve</i>.'),
+      q: [['«No tengo ningún hermano» →', ['No tinc cap germà', 'No tinc ningú germà'], 0],
+          ['«¿Quieres algo?» →', ['Vols res?', 'Vols algo?'], 0],
+          ['«No me gusta nada» →', ["No m'agrada gens", "No m'agrada nada"], 0]] },
+
+    { id: 'interrogatius', g: 'frase', t: 'Les preguntes', es: 'Las preguntas (interrogativos)', k: 'interrogatiu que qui quin quina on com quan quant per que perque',
+      b: T(['Català', 'Castellà', 'Exemple'], [
+            ['què', 'qué', '<b>Què</b> vols? <b>Què</b> fas?'], ['qui', 'quién', '<b>Qui</b> és aquest noi?'],
+            ['quin, quina, quins, quines', 'qué / cuál (+ nombre)', '<b>Quin</b> llibre vols? <b>Quina</b> hora és?'],
+            ['on / d\'on', 'dónde / de dónde', '<b>On</b> vius? <b>D\'on</b> ets?'], ['com', 'cómo', '<b>Com</b> et dius?'], ['quan', 'cuándo', '<b>Quan</b> vens?'],
+            ['quant, quanta, quants, quantes', 'cuánto/a/os/as', '<b>Quant</b> costa? <b>Quants</b> anys tens?'], ['per què', 'por qué', '<b>Per què</b> plores?']]) +
+        W('Delante de un nombre se usa <b>quin / quina</b>, no <i>què</i>: <i>¿Qué día es hoy?</i> → <b>Quin dia és avui?</b>') +
+        H('Per què / perquè') +
+        E([['<b>Per què</b> no vens?', '¿Por qué no vienes? (pregunta)'], ['No vinc <b>perquè</b> estic cansat.', 'No vengo porque estoy cansado. (respuesta)']]) +
+        R('en catalán solo se escribe el signo de interrogación <b>al final</b>: <i>Com estàs?</i>'),
+      q: [['«¿Qué hora es?» →', ['Què hora és?', 'Quina hora és?'], 1],
+          ['«¿Cuántos años tienes?» →', ['Quants anys tens?', 'Quin anys tens?'], 0],
+          ['«¿Por qué?» →', ['Perquè?', 'Per què?'], 1]] },
+
+    // ---------------- ERRORS ----------------
+    { id: 'castellanismes', g: 'err', t: 'Castellanismes freqüents', es: 'Errores frecuentes de castellanohablantes', k: 'castellanisme error barbarisme vale bueno pues entonces tenir que vaso coger',
+      b: P('Palabras y expresiones del castellano que se cuelan al hablar catalán. A la izquierda la forma incorrecta, a la derecha la correcta:') +
+        T(['❌ Incorrecte', '✅ Correcte', 'Castellà'], [
+            ['vale', "d'acord", 'vale'], ['bueno', 'bé / bo', 'bueno'], ['pues', 'doncs', 'pues'], ['entonces', 'aleshores / llavors', 'entonces'],
+            ['tinc que', 'he de', 'tengo que'], ['hi han', 'hi ha', 'hay (plural)'], ['ojalà', 'tant de bo', 'ojalá'], ['vaso', 'got', 'vaso'],
+            ['coger', 'agafar', 'coger'], ['desde', 'des de', 'desde'], ['hasta', 'fins (a)', 'hasta'], ['lo bo', 'el que és bo', 'lo bueno'],
+            ['anar a per', 'anar a buscar', 'ir a por'], ['mitjo', 'mig', 'medio'], ['apenes', 'a penes / gairebé no', 'apenas'], ['enterar-se', 'assabentar-se', 'enterarse'],
+            ['sino', 'sinó', 'sino']]) +
+        E([["No és blanc, <b>sinó</b> negre.", 'No es blanco, sino negro.'], ['<b>Si no</b> vens, truca\'m.', 'Si no vienes, llámame.']]) +
+        R('cuando una palabra «suena» demasiado a castellano, consulta el diccionario (DIEC o Optimot). Muchas veces la palabra catalana es diferente.'),
+      q: [['«Vale, nos vemos mañana» →', ["Vale, ens veiem demà", "D'acord, ens veiem demà"], 1],
+          ['«Un vaso de agua» →', ["Un vaso d'aigua", "Un got d'aigua"], 1],
+          ['«Ojalá llueva» →', ['Ojalà plogui', 'Tant de bo plogui'], 1]] }
+    ];
+
+    // ===== INTERFÍCIE =====
+    const $ = id => document.getElementById(id);
+    const norm = s => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/·/g, '');
+    const strip = h => h.replace(/<[^>]+>/g, ' ');
+    const gName = g => (GROUPS.find(x => x[0] === g) || ['', ''])[1];
+    let DONE = {};
+    try { DONE = JSON.parse(localStorage.getItem('gram-done') || '{}'); } catch (e) {}
+    const saveDone = () => { try { localStorage.setItem('gram-done', JSON.stringify(DONE)); } catch (e) {} };
+    let cur = null;
+
+    // Veu en català (toca un exemple per escoltar-lo)
+    let voice = null;
+    function pickVoice() { try { voice = speechSynthesis.getVoices().find(v => /^ca/i.test(v.lang)) || null; } catch (e) {} }
+    try { pickVoice(); speechSynthesis.addEventListener('voiceschanged', pickVoice); } catch (e) {}
+    function speak(t) {
+        try {
+            speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(t.replace(/[→\/]/g, ', '));
+            u.lang = 'ca-ES'; u.rate = 0.85; if (voice) u.voice = voice;
+            speechSynthesis.speak(u);
+        } catch (e) {}
+    }
+
+    function setView(v) {
+        $('grIndex').style.display = v === 'index' ? '' : 'none';
+        $('grPrintPanel').style.display = v === 'print' ? '' : 'none';
+        $('grTopic').style.display = v === 'topic' ? '' : 'none';
+        $('grIndexBtn').classList.toggle('lb-primary', v === 'index');
+        $('grPrintBtn').classList.toggle('lb-primary', v === 'print');
+    }
+
+    // ----- Índex -----
+    function renderIndex(filter) {
+        const f = norm(filter).trim();
+        let n = 0, html = '';
+        GROUPS.forEach(([g, name]) => {
+            const list = TOPICS.filter(t => t.g === g && (!f || norm(t.t + ' ' + t.es + ' ' + t.k + ' ' + (f.length > 2 ? strip(t.b) : '')).includes(f)));
+            if (!list.length) return;
+            html += '<div class="lb-idx-group">' + name + '</div>';
+            list.forEach(t => {
+                n++;
+                const num = TOPICS.indexOf(t) + 1;
+                html += '<button class="gr-idx-item" type="button" data-id="' + t.id + '">' +
+                    '<span class="lb-idx-id">' + num + '</span><span class="gr-idx-txt"><span class="lb-idx-name">' + t.t + '</span>' +
+                    '<span class="gr-idx-es">' + t.es + '</span></span>' + (DONE[t.id] ? '<span class="gr-done">✓</span>' : '') + '<span class="gr-arrow">›</span></button>';
+            });
+        });
+        if (!n) html = '<p class="lb-res-head">No s\'ha trobat cap tema per «' + filter + '». Prova amb una altra paraula.</p>';
+        else if (f) html = '<p class="lb-res-head">' + n + ' tema' + (n > 1 ? 'es' : '') + ' trobat' + (n > 1 ? 's' : '') + '</p>' + html;
+        $('grIndex').innerHTML = html;
+        const done = TOPICS.filter(t => DONE[t.id]).length;
+        $('grProg').textContent = done + ' / ' + TOPICS.length + ' temes repassats';
+    }
+
+    // ----- Tema -----
+    function quizHtml(t, printMode) {
+        return '<div class="gr-quiz"><div class="gr-quiz-t">🎯 Comprova-ho</div>' + t.q.map((q, i) =>
+            '<div class="gr-q" data-q="' + i + '"><div class="gr-q-t">' + (i + 1) + '. ' + q[0] + '</div><div class="lb-opts">' +
+            q[1].map((o, j) => printMode ? '<span class="lb-opt">' + String.fromCharCode(97 + j) + ') ' + o + '</span>'
+                : '<button class="lb-opt" type="button" data-o="' + j + '">' + o + '</button>').join('') + '</div></div>').join('') + '</div>';
+    }
+    function topicHtml(t, printMode) {
+        const num = TOPICS.indexOf(t) + 1;
+        return '<div class="gr-topic-head"><div class="lb-lesson-sub">' + gName(t.g) + ' · Tema ' + num + '</div>' +
+            '<div class="lb-lesson-title">' + t.t + '</div><div class="lb-lesson-goal">' + t.es + '</div></div>' +
+            '<div class="gr-body">' + t.b + '</div>';
+    }
+    function openTopic(id, scroll) {
+        const t = TOPICS.find(x => x.id === id); if (!t) return;
+        cur = t;
+        const i = TOPICS.indexOf(t), prev = TOPICS[i - 1], next = TOPICS[i + 1];
+        $('grTopic').innerHTML =
+            '<div class="gr-nav"><button class="lb-back" type="button" data-act="index">← Índex</button>' +
+            '<button class="lb-btn" type="button" data-act="print1">🖨️ Imprimir aquest tema</button></div>' +
+            '<div class="lb-card gr-card">' + topicHtml(t) + quizHtml(t) + '<div class="gr-qres" id="grQres"></div></div>' +
+            '<div class="gr-pn">' + (prev ? '<button class="lb-btn" type="button" data-go="' + prev.id + '">‹ ' + prev.t + '</button>' : '<span></span>') +
+            (next ? '<button class="lb-btn lb-primary" type="button" data-go="' + next.id + '">' + next.t + ' ›</button>' : '') + '</div>';
+        $('grTopic').querySelectorAll('.gr-ca').forEach(el => { el.title = 'Toca per escoltar'; });
+        setView('topic');
+        try { localStorage.setItem('gram-last', id); } catch (e) {}
+        if (scroll !== false) $('tab-gramatica').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function answer(btn) {
+        const qEl = btn.closest('.gr-q'); if (!qEl || qEl.dataset.ans) return;
+        const qi = +qEl.dataset.q, oi = +btn.dataset.o, ok = cur.q[qi][2];
+        qEl.dataset.ans = oi === ok ? 'ok' : 'bad';
+        qEl.querySelectorAll('.lb-opt').forEach(b => { b.disabled = true; if (+b.dataset.o === ok) b.classList.add('ok'); });
+        if (oi !== ok) btn.classList.add('bad');
+        const all = $('grTopic').querySelectorAll('.gr-q'), ans = [...all].filter(q => q.dataset.ans);
+        if (ans.length === all.length) {
+            const good = ans.filter(q => q.dataset.ans === 'ok').length;
+            $('grQres').innerHTML = (good === all.length ? '🎉 Perfecte! ' : good ? '👍 ' : '💪 ') + good + ' / ' + all.length + ' correctes' +
+                ' <button class="lb-btn" type="button" data-act="retry">🔄 Repetir</button>';
+            if (good === all.length) { DONE[cur.id] = 1; saveDone(); }
+        }
+    }
+
+    // ----- Impressió per temes -----
+    function renderPrintPanel() {
+        let html = '<p class="lb-intro" style="display:block">Marca els temes que vols imprimir. Pots imprimir un bloc sencer o temes solts.</p>' +
+            '<div class="gr-pr-opts"><label><input type="checkbox" id="grPrQuiz" checked> Incloure les preguntes de repàs (amb solucions al final)</label>' +
+            '<label><input type="checkbox" id="grPrBreak"> Cada tema en una pàgina nova</label></div>' +
+            '<div class="lb-actions"><button class="lb-btn" type="button" data-act="all">☑️ Tots</button><button class="lb-btn" type="button" data-act="none">⬜ Cap</button></div>';
+        GROUPS.forEach(([g, name]) => {
+            html += '<div class="gr-pr-group"><label class="gr-pr-gl"><input type="checkbox" data-group="' + g + '"> ' + name + '</label>';
+            TOPICS.filter(t => t.g === g).forEach(t => {
+                html += '<label class="gr-pr-item"><input type="checkbox" data-topic="' + t.id + '"> ' + (TOPICS.indexOf(t) + 1) + '. ' + t.t + ' <span class="gr-idx-es">— ' + t.es + '</span></label>';
+            });
+            html += '</div>';
+        });
+        html += '<div class="lb-actions"><button class="lb-btn lb-primary" type="button" data-act="printsel">🖨️ Imprimir seleccionats (<span id="grPrN">0</span>)</button></div>';
+        $('grPrintPanel').innerHTML = html;
+    }
+    function syncPrint() {
+        const panel = $('grPrintPanel');
+        GROUPS.forEach(([g]) => {
+            const boxes = [...panel.querySelectorAll('input[data-topic]')].filter(b => TOPICS.find(t => t.id === b.dataset.topic).g === g);
+            const gb = panel.querySelector('input[data-group="' + g + '"]'), c = boxes.filter(b => b.checked).length;
+            gb.checked = c === boxes.length; gb.indeterminate = c > 0 && c < boxes.length;
+        });
+        $('grPrN').textContent = panel.querySelectorAll('input[data-topic]:checked').length;
+    }
+    function doPrint(ids, withQuiz, pageBreak) {
+        if (!ids.length) { alertBox('Marca almenys un tema per imprimir.'); return; }
+        const list = TOPICS.filter(t => ids.includes(t.id));
+        let html = '<div class="gr-pr-title">Aprèn Català · Gramàtica</div><div class="gr-pr-sub">' +
+            (list.length === 1 ? list[0].t : list.length + ' temes: ' + list.map(t => (TOPICS.indexOf(t) + 1) + '. ' + t.t).join(' · ')) + '</div>';
+        list.forEach((t, i) => {
+            html += '<section class="gr-pr-topic' + (pageBreak && i ? ' gr-pr-break' : '') + '">' + topicHtml(t, true) + (withQuiz ? quizHtml(t, true) : '') + '</section>';
+        });
+        if (withQuiz) {
+            html += '<section class="gr-pr-sol"><div class="gr-quiz-t">✅ Solucions</div>' + list.map(t =>
+                '<div><b>' + (TOPICS.indexOf(t) + 1) + '. ' + t.t + ':</b> ' + t.q.map((q, i) => (i + 1) + String.fromCharCode(97 + q[2]) + ') ' + q[1][q[2]]).join(' · ') + '</div>').join('') + '</section>';
+        }
+        $('grPrint').innerHTML = html;
+        document.body.classList.add('gr-printing');
+        setTimeout(() => window.print(), 80);
+    }
+    function alertBox(msg) {
+        const el = $('grMsg'); el.textContent = msg; el.style.display = 'block';
+        clearTimeout(alertBox.t); alertBox.t = setTimeout(() => { el.style.display = 'none'; }, 2500);
+    }
+    window.addEventListener('afterprint', () => document.body.classList.remove('gr-printing'));
+
+    // ----- Esdeveniments -----
+    let ready = false;
+    function init() {
+        renderIndex('');
+        renderPrintPanel();
+        $('grSearch').addEventListener('input', e => { setView('index'); renderIndex(e.target.value); });
+        $('grIndexBtn').addEventListener('click', () => { $('grSearch').value = ''; renderIndex(''); setView('index'); });
+        $('grPrintBtn').addEventListener('click', () => { setView('print'); syncPrint(); });
+        $('grIndex').addEventListener('click', e => { const b = e.target.closest('.gr-idx-item'); if (b) openTopic(b.dataset.id); });
+        $('grTopic').addEventListener('click', e => {
+            const go = e.target.closest('[data-go]'); if (go) return openTopic(go.dataset.go);
+            const act = e.target.closest('[data-act]');
+            if (act) {
+                if (act.dataset.act === 'index') { renderIndex($('grSearch').value); setView('index'); }
+                else if (act.dataset.act === 'print1') doPrint([cur.id], true, false);
+                else if (act.dataset.act === 'retry') openTopic(cur.id, false);
+                return;
+            }
+            const opt = e.target.closest('button.lb-opt'); if (opt) return answer(opt);
+            const ca = e.target.closest('.gr-ca'); if (ca) speak(ca.textContent);
+        });
+        $('grPrintPanel').addEventListener('change', e => {
+            const g = e.target.dataset.group;
+            if (g) $('grPrintPanel').querySelectorAll('input[data-topic]').forEach(b => { if (TOPICS.find(t => t.id === b.dataset.topic).g === g) b.checked = e.target.checked; });
+            syncPrint();
+        });
+        $('grPrintPanel').addEventListener('click', e => {
+            const act = e.target.closest('[data-act]'); if (!act) return;
+            const boxes = $('grPrintPanel').querySelectorAll('input[data-topic]');
+            if (act.dataset.act === 'all') boxes.forEach(b => b.checked = true);
+            else if (act.dataset.act === 'none') boxes.forEach(b => b.checked = false);
+            else if (act.dataset.act === 'printsel') {
+                return doPrint([...boxes].filter(b => b.checked).map(b => b.dataset.topic), $('grPrQuiz').checked, $('grPrBreak').checked);
+            }
+            syncPrint();
+        });
+        setView('index');
+    }
+    window.renderGramatica = function () { if (!ready) { ready = true; init(); } };
+    window.gramPrintCurrent = function () {
+        if (!ready) return window.print();
+        if ($('grTopic').style.display !== 'none' && cur) doPrint([cur.id], true, false);
+        else { setView('print'); syncPrint(); alertBox('Tria els temes que vols imprimir i prem «Imprimir seleccionats».'); }
+    };
+})();
+</script>
+<script>
+// Obrir directament una pestanya amb l'adreça: vb.html#gramatica
+(function () {
+  const map = { gramatica: 'tab-gramatica', llibre: 'tab-llibre' };
+  function openHash() {
+    const id = map[(location.hash || '').slice(1).toLowerCase()]; if (!id) return;
+    const btn = [...document.querySelectorAll('nav button')].find(b => (b.getAttribute('onclick') || '').includes("'" + id + "'"));
+    if (btn) btn.click();
+  }
+  window.addEventListener('hashchange', openHash);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', openHash); else openHash();
 })();
 </script>
 
