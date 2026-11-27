@@ -5773,15 +5773,22 @@ function printCurrentSection() {
                 if (!target) return;
                 target.value = bankOpts[+c.dataset.k];
                 target.classList.remove('ok', 'bad'); target.parentElement.querySelector('.lb-fix').textContent = '';
-                refreshUsed();
+                refreshUsed(); live();
                 const next = inputs.find(i => !i.value.trim());
                 lastFocus = next || target;
             });
             const check = () => {
                 st.right = 0; st.answered = st.n;
-                inputs.forEach((inp, j) => { if (mark1(inp, j, false)) st.right++; });
+                inputs.forEach((inp, j) => { if (mark1(inp, j, !!inp.value.trim())) st.right++; });
                 update();
             };
+            // Corrección sobre la marcha: al salir del hueco o al elegir una palabra
+            const live = () => {
+                st.right = 0; st.answered = 0;
+                inputs.forEach((inp, j) => { if (!inp.value.trim()) return; st.answered++; if (mark1(inp, j, true)) st.right++; });
+                update();
+            };
+            inputs.forEach(inp => inp.addEventListener('change', live));
             card.querySelector('.lb-chk').onclick = check;
             card.querySelector('.lb-sol').onclick = () => inputs.forEach((inp, j) => mark1(inp, j, true));
         } else if (ex.type === 'choice') {
@@ -5810,9 +5817,19 @@ function printCurrentSection() {
             };
             const check = () => {
                 st.right = 0; st.answered = st.n;
-                inputs.forEach((inp, j) => { if (mark1(inp, j, false)) st.right++; });
+                inputs.forEach((inp, j) => { if (mark1(inp, j, !!inp.value.trim())) st.right++; });
                 update();
             };
+            // Corrección sobre la marcha: al pasar a la siguiente pregunta se corrige la que acabas de contestar
+            const live = () => {
+                st.right = 0; st.answered = 0;
+                inputs.forEach((inp, j) => { if (!inp.value.trim()) return; st.answered++; if (mark1(inp, j, true)) st.right++; });
+                update();
+            };
+            inputs.forEach(inp => {
+                inp.addEventListener('change', live);
+                inp.addEventListener('input', () => { inp.classList.remove('ok', 'bad'); inp.parentElement.querySelector('.lb-fix').textContent = ''; });
+            });
             card.querySelector('.lb-chk').onclick = check;
             card.querySelector('.lb-sol').onclick = () => inputs.forEach((inp, j) => mark1(inp, j, true));
             inputs.forEach((inp, j) => inp.addEventListener('keydown', e => {
